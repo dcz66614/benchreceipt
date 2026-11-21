@@ -1,0 +1,5 @@
+$ /home/hatch/workspace/p027-benchreceipt/.venv/bin/python -m benchreceipt verify --policy /home/hatch/workspace/p027-benchreceipt/.tmp/fix-r1-repro-scratch/fixtures/s0/e5-clean-tree-head-change/policy.toml --evidence /home/hatch/workspace/p027-benchreceipt/.tmp/fix-r1-repro/e5-clean-tree-head-change-legacy/evidence --expected-source-sha aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa --out /home/hatch/workspace/p027-benchreceipt/03_evidence/fix-r1-repro/e5-clean-tree-head-change-legacy.python-result.json
+exit=0
+--- stdout ---
+benchreceipt verify: status=BOUND_PASS jobs_verified=1 reason_codes=- out=/home/hatch/workspace/p027-benchreceipt/03_evidence/fix-r1-repro/e5-clean-tree-head-change-legacy.python-result.json
+--- stderr ---

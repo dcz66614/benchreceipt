@@ -1,0 +1,21 @@
+Processing ./.tmp/review-tmp/dist-extract/benchreceipt-0.1.0-py3-none-any.whl
+Installing collected packages: benchreceipt
+Successfully installed benchreceipt-0.1.0
+capture exit: 2
+verify exit: 3 status: INVALID jobs_verified: 0 reasons: ['INVALID_POLICY']
+Traceback (most recent call last):
+  File "<stdin>", line 19, in <module>
+AssertionError
+capture exit: 2 | tail:  benchreceipt capture: error: the following arguments are required: --job, --matrix
+verify exit: 3 status: INVALID jobs_verified: 0 reasons: ['INVALID_EVIDENCE']
+Traceback (most recent call last):
+  File "<stdin>", line 19, in <module>
+AssertionError
+capture exit: 0 | tail: benchreceipt capture: job=unit-linux-py312 exit=0 receipt=.benchreceipt/evidence/unit-linux-py312/receipt.json source_mutated=false 
+verify exit: 2 status: UNBOUND jobs_verified: 0 reasons: ['SOURCE_MUTATED_DURING_RUN']
+Traceback (most recent call last):
+  File "<stdin>", line 19, in <module>
+AssertionError
+capture exit: 0 | benchreceipt capture: job=unit-linux-py312 exit=0 receipt=.benchreceipt/evidence/unit-linux-py312/receipt.json source_mutated=false
+verify exit: 0 status: BOUND_PASS jobs_verified: 1 reasons: []
+OFFLINE_INSTALL_ROUNDTRIP: PASS (fresh venv from dist.zip wheel, no network, clean-tree capture+verify BOUND_PASS)

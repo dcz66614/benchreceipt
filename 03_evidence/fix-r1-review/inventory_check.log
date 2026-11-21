@@ -1,0 +1,43 @@
+T013 inventory rows: 37  key=yes: 34
+path                                                    newpath?     status         lines oldlines  sha-prefix  t013
+02_source/src/benchreceipt/capture.py                   -            CHANGED          674      609  6ba926dc3914 OK
+02_source/src/benchreceipt/git_identity.py              -            UNCHANGED        213      213  61f1a53fae80 OK
+02_source/src/benchreceipt/ci_metadata.py               -            UNCHANGED        196      196  960ab6c537d3 OK
+02_source/src/benchreceipt/command.py                   -            CHANGED          289      228  0fedd5aa4b71 OK
+02_source/src/benchreceipt/canonical.py                 -            UNCHANGED         50       50  540d16a88e29 OK
+02_source/src/benchreceipt/verify.py                    -            CHANGED          970      886  7c70f44570ba OK
+02_source/src/benchreceipt/matrix.py                    -            UNCHANGED        101      101  6c2cbe8bf70c OK
+02_source/src/benchreceipt/reports/junit.py             -            CHANGED          199      199  bb5af528f6d9 OK
+02_source/src/benchreceipt/reports/lcov.py              -            CHANGED          309      309  80c3f2b53b55 OK
+02_source/src/benchreceipt/bundle.py                    -            UNCHANGED        788      788  ce557f6f4ca7 OK
+02_source/src/benchreceipt/render/html.py               -            UNCHANGED        693      693  66704da5fad4 OK
+02_source/src/benchreceipt/cli.py                       -            CHANGED          381      380  51fb6c3189ad OK
+02_source/src/benchreceipt/__main__.py                  -            UNCHANGED         13       13  30819d5b2ec5 OK
+02_source/src/benchreceipt/__init__.py                  -            CHANGED           10       10  1b7920a55ec7 OK
+02_source/src/benchreceipt/render/__init__.py           -            UNCHANGED          5        5  ddec99272b71 OK
+02_source/src/benchreceipt/reports/__init__.py          -            UNCHANGED         10       10  73c8c07bffb3 OK
+02_source/src/benchreceipt/schema.py                    -            CHANGED          270      265  3b0ce03abdcd OK
+02_source/src/benchreceipt/policy.py                    -            UNCHANGED        124      124  683ef274cb87 OK
+02_source/schemas/run.v1.json                           MOVED        MOVED+CHANGED      1        1  fce85f3decbd OK
+02_source/schemas/policy.v1.json                        MOVED        UNCHANGED          1        1  2e555dc3c954 OK
+02_source/schemas/result.v1.json                        MOVED        UNCHANGED          1        1  2f16a1024bb5 OK
+02_source/schemas/README.md                             MOVED        MOVED+CHANGED     90       87  27613c955a03 OK
+02_source/oracle/verify.mjs                             -            CHANGED         1823      702  ac65f524c4fa OK
+02_source/oracle/verify.test.mjs                        -            CHANGED          606      111  bdab56971828 OK
+02_source/oracle/README.md                              -            CHANGED           58       32  bd1e243e41e9 OK
+02_source/pyproject.toml                                -            CHANGED           63       47  60bb4f4db825 OK
+02_source/examples/github-actions/ci.yml                -            UNCHANGED        190      190  9c672a4cafe9 OK
+02_source/scripts/s0_gate.py                            -            CHANGED          375      375  04dca6fa77e6 OK
+02_source/scripts/repeat_hash.py                        -            UNCHANGED         64       64  64281520c01f OK
+02_source/scripts/validate_workflow_example.py          -            UNCHANGED        601      601  8412a94c666e OK
+02_source/scripts/offline_check.py                      -            UNCHANGED        240      240  3deb9b75d400 OK
+02_source/scripts/performance_smoke.py                  -            UNCHANGED        165      165  9deb600338df OK
+02_source/scripts/privacy_scan.py                       -            UNCHANGED        267      267  cdb5566b99a8 OK
+02_source/scripts/build_fixtures.py                     -            CHANGED          607      567  f6a9ff891ce2 OK
+02_source/scripts/ui_smoke.py                           -            UNCHANGED        120      120  298de709d159 OK
+02_source/scripts/verify_review_pack.py                 -            UNCHANGED        253      253  f1c6b2d7defb MISMATCH(cfede271 blob=?)
+02_source/scripts/check_review_coverage.py              -            UNCHANGED        125      125  70cbffe17efc MISMATCH(cfede271 blob=?)
+
+SUMMARY: unchanged=21 changed=14 moved+changed=2 missing=0
+key files: 34
+wrote inventory_table.md

@@ -1,0 +1,6 @@
+P027-T010 ui_smoke: rendering 3 fixture reports
+  ok report-n01.html: status=BOUND_PASS size=7742 bytes external_refs=0
+  ok report-g1.html: status=BOUND_FAIL size=9002 bytes external_refs=0
+  ok report-d1.html: status=UNBOUND size=8093 bytes external_refs=0
+screenshots: NOT_TESTED (no browser on this VM)
+ui_smoke: PASS (3 reports rendered, 0 external refs, screenshots NOT_TESTED)

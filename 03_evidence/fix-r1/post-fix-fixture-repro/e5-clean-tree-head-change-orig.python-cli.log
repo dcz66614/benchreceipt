@@ -1,0 +1,5 @@
+$ /home/hatch/workspace/p027-benchreceipt/.venv/bin/python -m benchreceipt verify --policy /home/hatch/workspace/p027-benchreceipt/.tmp/fix-r1-tmp/fixed-tree/fixtures/s0/e5-clean-tree-head-change/policy.toml --evidence /home/hatch/workspace/p027-benchreceipt/.tmp/fix-r1-tmp/post-fix-repro/e5-clean-tree-head-change-orig/evidence --expected-source-sha aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa --out /home/hatch/workspace/p027-benchreceipt/03_evidence/fix-r1/post-fix-fixture-repro/e5-clean-tree-head-change-orig.python-result.json
+exit=2
+--- stdout ---
+benchreceipt verify: status=UNBOUND jobs_verified=0 reason_codes=SOURCE_MUTATED_DURING_RUN out=/home/hatch/workspace/p027-benchreceipt/03_evidence/fix-r1/post-fix-fixture-repro/e5-clean-tree-head-change-orig.python-result.json
+--- stderr ---

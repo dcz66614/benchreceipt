@@ -1,0 +1,15 @@
+TASK_ID,GOAL,STATUS,COMMIT,EVIDENCE
+T001,Environment facts / repo skeleton / competitor survival gate,PASS,f6c2363,00_control/ENVIRONMENT.md + COMPETITOR_SURVIVAL.md (PASS)
+T002,Schema / Policy / Canonical JSON,PASS,4e87756,"schemas/run.v1+policy.v1+result.v1, canonical.py, policy.py, ADR-001 (12 decisions)"
+T003,Capture runner + Git/CI identity,PASS,7bd8061,"git_identity/ci_metadata/command/capture.py, 53 new tests, smoke receipt validates, real HEAD 46d7f09a…"
+T004,48 fixtures + independent Oracle + S0 gate,PASS,5bafd91,"S0 PASS 10/10: 16/16 controls, 32/32 faults, parity 48/48, repeat-100 1 hash a19054f1…, P95 0.086s, 213 tests"
+T005,JUnit / LCOV parser,PASS,11b6154,"reports/junit.py + lcov.py, 74 new tests, full 287 passed, S0 re-run PASS (P95 0.101s), XXE sentinel probe"
+T006,Artifact bundle + SHA-256,PASS,3a6844f,"bundle.py build/verify, 25 new tests, full 312 passed, S0 re-run PASS, tamper probe caught by both checks"
+T007,Policy + matrix aggregator,PASS,166bd2f,"matrix.py + completed policy.py, 73 new tests, full 385 passed, S0 re-run PASS (refactor changed no S0 result)"
+T008,Verification engine + exit codes,PASS,7d479c3,"cli.py 4 subcommands, 73 new tests, full 458 passed, S0 re-run PASS, exit demo 0/1/2/3 verified by coordinator"
+T009,GitHub Actions example integration,PASS,dd83331,"ci.yml 4-job matrix + validator PASS + 10 integration tests, full 468 on branch; found P1 seam (see FIX)"
+T010,Static HTML evidence-chain report,PASS,71212f8,"render/html.py, 21 tests, ui_smoke PASS 0 external refs, screenshots NOT_TESTED; result.v1 per-job gap noted for T013"
+T011,Adversarial / privacy / security regression,WAITING,,
+T012,Cross-platform / offline / performance / docs,WAITING,,
+T013,Independent read-only code review,WAITING,,
+T014,Fix / freeze / release,WAITING,,

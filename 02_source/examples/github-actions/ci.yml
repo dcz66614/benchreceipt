@@ -1,0 +1,190 @@
+# BenchReceipt example workflow (P027-T009, PROJECT_BOOK §4.2 FR-11, §6.4).
+#
+# What it does: runs the test suite once per matrix cell, wraps each run
+# in `benchreceipt capture` (one receipt per job), uploads each job's
+# `.benchreceipt/evidence/<job-id>/` directory as its own artifact, then
+# an aggregate `verify` job downloads ALL job artifacts first and only
+# then runs `benchreceipt verify`. The aggregate job fails (non-zero
+# exit) when verify reports anything other than BOUND_PASS.
+#
+# ---------------------------------------------------------------------------
+# SOURCE IDENTITY — READ THIS BEFORE CHANGING `ref:` (PROJECT_BOOK §1.2 A)
+# ---------------------------------------------------------------------------
+# For a `pull_request` event GitHub defines TWO different SHAs:
+#   * `github.event.pull_request.head.sha` — the tip of the PR branch
+#     (what the author actually wrote);
+#   * `github.sha` — the *merge* commit GitHub synthesises to test the
+#     PR merged into its base (what `actions/checkout` checks out by
+#     default, and what `GITHUB_SHA` holds for pull_request events).
+# This workflow EXPLICITLY checks out the PR head:
+#   ref: ${{ github.event.pull_request.head.sha || github.sha }}
+# and verifies against that same SHA. The `|| github.sha` fallback only
+# applies to `push` events, where there is no pull_request payload and
+# the pushed commit is the only sensible identity.
+#
+# If you instead let checkout default to the merge commit while the
+# policy says `source_mode = "pr_head"`, capture records
+# `source_mode = "merge_commit"` and verify correctly reports
+# SOURCE_SHA_MISMATCH / UNBOUND (scenario A). That is the gate working,
+# not a false alarm: the report would describe the merge commit, not
+# the PR head you asked to verify. To verify the merge commit instead,
+# change BOTH the checkout ref AND the policy `source_mode` to
+# "merge_commit" — never just one of them.
+#
+# Push events: the policy in `.benchreceipt.toml` is `pr_head`, so a
+# `push` run captures with `source_mode = "event_sha"` and the aggregate
+# job reports SOURCE_MODE_MISMATCH / UNBOUND. That is by design — this
+# policy is a PR gate. For a push gate, use a second policy file with
+# `source_mode = "event_sha"`.
+#
+# ---------------------------------------------------------------------------
+# NO GITHUB API TOKEN — BY DESIGN (PROJECT_BOOK §2.2, §7.1)
+# ---------------------------------------------------------------------------
+# Nothing here uses `github.token`, `secrets.*`, the `gh` CLI, or any
+# GitHub API call. Identity comes only from the checkout, the event
+# payload GitHub already places on the runner (`GITHUB_EVENT_PATH`),
+# and the standard `GITHUB_*` environment variables. BenchReceipt
+# itself never calls the network. `scripts/validate_workflow_example.py`
+# fails the build if a token or API call is ever added to this file.
+#
+# ---------------------------------------------------------------------------
+# INSTALL — LOCAL ONLY
+# ---------------------------------------------------------------------------
+# BenchReceipt is installed from a path inside this repository, never
+# downloaded at runtime: vendor the BenchReceipt source tree at
+# `vendor/benchreceipt/` (a copy of this project's `02_source/`) or
+# replace the path with a locally built wheel, e.g.
+# `./dist/benchreceipt-0.1.0-py3-none-any.whl`. The only network use in
+# this workflow is the standard `actions/checkout` / `actions/setup-python`
+# actions themselves.
+#
+# ---------------------------------------------------------------------------
+# JUNIT SUMMARY (closed by ADR-004 — this note replaces the stale
+# T009 "KNOWN LIMITATION" that used to stand here)
+# ---------------------------------------------------------------------------
+# `capture` now writes the parsed `junit` summary counts into the
+# receipt (branch `fix-capture-junit`, ADR-004), and `verify` accepts
+# them when the policy requires junit: a fully green, same-head,
+# same-run, same-attempt bundle verifies BOUND_PASS. The old gap —
+# capture wrote only the JUnit bytes + SHA-256 while verify reported
+# MISSING_FIELD / UNBOUND — is closed, and the new behaviour is pinned
+# in `02_source/tests/integration/test_github_actions.py`
+# (`test_all_green_bundle_verifies_bound_pass`) and in
+# `02_source/tests/capture/test_capture_junit_summary.py`. A malformed
+# JUnit report still fails closed: no summary is guessed, the receipt
+# is written with a stderr warning, and verify reports
+# JUNIT_MALFORMED → INVALID. See examples/github-actions/README.md
+# §5 for the full statement.
+#
+# One gap remains, by design: the frozen `benchreceipt.run/v1` schema
+# has no field for an LCOV summary, so `capture` does not emit one —
+# only the JUnit summary is recorded (see ADR-004). Adding an LCOV
+# summary field is a spec decision for T013, not a capture change.
+#
+# This workflow has NOT been run on real GitHub Actions (no real repo
+# exists for this project); it is validated only by the synthetic/local
+# checks in `02_source/tests/integration/test_github_actions.py` and
+# `02_source/scripts/validate_workflow_example.py`.
+
+name: CI
+
+on:
+  pull_request:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: test (${{ matrix.job_id }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            python: "3.12"
+            job_id: unit-linux-py312
+          - os: ubuntu-latest
+            python: "3.13"
+            job_id: unit-linux-py313
+          - os: windows-latest
+            python: "3.12"
+            job_id: unit-windows-py312
+          - os: windows-latest
+            python: "3.13"
+            job_id: unit-windows-py313
+    steps:
+      - name: Check out PR head (not the merge commit)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Set up Python ${{ matrix.python }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install BenchReceipt from the local source tree
+        run: python -m pip install --no-build-isolation ./vendor/benchreceipt
+      - name: Capture test evidence
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+        run: benchreceipt capture --job ${{ matrix.job_id }} --matrix os=${{ matrix.os }},python=${{ matrix.python }} --junit .benchreceipt/out/junit.xml -- python -m pytest -q -p no:cacheprovider --junitxml=.benchreceipt/out/junit.xml
+      - name: Upload per-job evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchreceipt-evidence-${{ matrix.job_id }}
+          path: .benchreceipt/evidence/${{ matrix.job_id }}
+          if-no-files-found: error
+          retention-days: 14
+
+  verify:
+    name: verify evidence bundle
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out PR head (not the merge commit)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install BenchReceipt from the local source tree
+        run: python -m pip install --no-build-isolation ./vendor/benchreceipt
+      - name: Download evidence for unit-linux-py312
+        uses: actions/download-artifact@v4
+        with:
+          name: benchreceipt-evidence-unit-linux-py312
+          path: .benchreceipt/evidence/unit-linux-py312
+      - name: Download evidence for unit-linux-py313
+        uses: actions/download-artifact@v4
+        with:
+          name: benchreceipt-evidence-unit-linux-py313
+          path: .benchreceipt/evidence/unit-linux-py313
+      - name: Download evidence for unit-windows-py312
+        uses: actions/download-artifact@v4
+        with:
+          name: benchreceipt-evidence-unit-windows-py312
+          path: .benchreceipt/evidence/unit-windows-py312
+      - name: Download evidence for unit-windows-py313
+        uses: actions/download-artifact@v4
+        with:
+          name: benchreceipt-evidence-unit-windows-py313
+          path: .benchreceipt/evidence/unit-windows-py313
+      - name: Confirm all expected job evidence was downloaded
+        run: test -f .benchreceipt/evidence/unit-linux-py312/receipt.json && test -f .benchreceipt/evidence/unit-linux-py313/receipt.json && test -f .benchreceipt/evidence/unit-windows-py312/receipt.json && test -f .benchreceipt/evidence/unit-windows-py313/receipt.json && echo "all 4 job evidence dirs downloaded"
+      - name: Verify the bundle against the policy
+        run: benchreceipt verify --policy .benchreceipt.toml --evidence .benchreceipt/evidence --expected-source-sha ${{ github.event.pull_request.head.sha || github.sha }} --out .benchreceipt/verification.json
+      - name: Show verification result
+        if: always()
+        run: cat .benchreceipt/verification.json
+      - name: Upload verification result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchreceipt-verification
+          path: .benchreceipt/verification.json
+          if-no-files-found: error
+          retention-days: 14

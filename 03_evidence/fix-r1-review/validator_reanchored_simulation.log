@@ -1,0 +1,3 @@
+key production files at 66502f6 (validator definition): 31
+index rows: 43 | pack rows: 37 | packs: 6
+SIMULATION PASS: re-anchored validator (FIXR1 index + FIXR1 packs) — all SHA-256 + line counts match, all key files listed, all packs listed

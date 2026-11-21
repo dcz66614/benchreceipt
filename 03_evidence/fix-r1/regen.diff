@@ -1,0 +1,603 @@
+Only in .tmp/fix-r1-tmp/fixtures-before: README.md
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/a1-wrong-source-sha/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/a1-wrong-source-sha/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/a2-one-job-wrong-sha/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/a2-one-job-wrong-sha/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/a2-one-job-wrong-sha/evidence/unit-windows-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/a2-one-job-wrong-sha/evidence/unit-windows-py312/receipt.json
+19a20
+>     "head_sha_after": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/a3-merge-expected-head-found/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/a3-merge-expected-head-found/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/a4-mode-mismatch-only/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/a4-mode-mismatch-only/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/b1-tree-mismatch/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/b1-tree-mismatch/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/b1-tree-mismatch/evidence/unit-windows-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/b1-tree-mismatch/evidence/unit-windows-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+---
+>     "tree_sha": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+>     "tree_sha_after": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/b2-three-job-one-tree-differs/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/b2-three-job-one-tree-differs/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/b2-three-job-one-tree-differs/evidence/unit-linux-py313/receipt.json .tmp/fix-r1-tmp/fixtures-regen/b2-three-job-one-tree-differs/evidence/unit-linux-py313/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+---
+>     "tree_sha": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+>     "tree_sha_after": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/b2-three-job-one-tree-differs/evidence/unit-windows-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/b2-three-job-one-tree-differs/evidence/unit-windows-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/b3-tree-mismatch-reversed/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/b3-tree-mismatch-reversed/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+---
+>     "tree_sha": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+>     "tree_sha_after": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/b3-tree-mismatch-reversed/evidence/unit-windows-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/b3-tree-mismatch-reversed/evidence/unit-windows-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/b4-two-trees-differ/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/b4-two-trees-differ/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/b4-two-trees-differ/evidence/unit-linux-py313/receipt.json .tmp/fix-r1-tmp/fixtures-regen/b4-two-trees-differ/evidence/unit-linux-py313/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+---
+>     "tree_sha": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+>     "tree_sha_after": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/b4-two-trees-differ/evidence/unit-windows-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/b4-two-trees-differ/evidence/unit-windows-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+---
+>     "tree_sha": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+>     "tree_sha_after": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/c1-attempt-mismatch/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/c1-attempt-mismatch/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/c1-attempt-mismatch/evidence/unit-windows-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/c1-attempt-mismatch/evidence/unit-windows-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/c2-run-id-mismatch/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/c2-run-id-mismatch/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/c2-run-id-mismatch/evidence/unit-windows-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/c2-run-id-mismatch/evidence/unit-windows-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/c3-run-and-attempt-mismatch/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/c3-run-and-attempt-mismatch/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/c3-run-and-attempt-mismatch/evidence/unit-windows-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/c3-run-and-attempt-mismatch/evidence/unit-windows-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/c4-three-job-one-attempt-differs/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/c4-three-job-one-attempt-differs/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/c4-three-job-one-attempt-differs/evidence/unit-linux-py313/receipt.json .tmp/fix-r1-tmp/fixtures-regen/c4-three-job-one-attempt-differs/evidence/unit-linux-py313/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/c4-three-job-one-attempt-differs/evidence/unit-windows-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/c4-three-job-one-attempt-differs/evidence/unit-windows-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/d1-matrix-missing/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/d1-matrix-missing/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/d2-matrix-duplicate/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/d2-matrix-duplicate/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/d2-matrix-duplicate/evidence/unit-linux-py312-dup/receipt.json .tmp/fix-r1-tmp/fixtures-regen/d2-matrix-duplicate/evidence/unit-linux-py312-dup/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/d2-matrix-duplicate/evidence/unit-windows-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/d2-matrix-duplicate/evidence/unit-windows-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/d3-matrix-unexpected/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/d3-matrix-unexpected/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/d3-matrix-unexpected/evidence/unit-macos-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/d3-matrix-unexpected/evidence/unit-macos-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/d3-matrix-unexpected/evidence/unit-windows-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/d3-matrix-unexpected/evidence/unit-windows-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/d4-missing-plus-unexpected/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/d4-missing-plus-unexpected/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/d4-missing-plus-unexpected/evidence/unit-macos-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/d4-missing-plus-unexpected/evidence/unit-macos-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/e1-clean-to-dirty/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/e1-clean-to-dirty/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/e2-one-job-mutated/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/e2-one-job-mutated/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/e2-one-job-mutated/evidence/unit-windows-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/e2-one-job-mutated/evidence/unit-windows-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/e3-started-dirty-stayed-dirty/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/e3-started-dirty-stayed-dirty/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/e4-digest-changed-flags-clean/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/e4-digest-changed-flags-clean/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+Only in .tmp/fix-r1-tmp/fixtures-regen: e7-legacy-clean-checkout
+Only in .tmp/fix-r1-tmp/fixtures-regen: e8-legacy-empty-commit
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/f1-report-file-missing/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/f1-report-file-missing/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/f2-report-hash-mismatch/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/f2-report-hash-mismatch/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/f3-lcov-required-missing/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/f3-lcov-required-missing/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/f4-report-size-lie/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/f4-report-size-lie/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/g1-junit-failed/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/g1-junit-failed/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/g2-junit-empty/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/g2-junit-empty/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/g3-junit-malformed/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/g3-junit-malformed/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/g4-exit-code-contradiction/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/g4-exit-code-contradiction/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/h1-workflow-mismatch/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/h1-workflow-mismatch/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/h2-junit-summary-missing/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/h2-junit-summary-missing/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/h3-below-min-tests/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/h3-below-min-tests/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/h4-missing-command/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/h4-missing-command/evidence/unit-linux-py312/receipt.json
+14a15
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+16c17,18
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/n01-single-pr-head/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/n01-single-pr-head/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/n02-two-job-pr-head/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/n02-two-job-pr-head/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/n02-two-job-pr-head/evidence/unit-windows-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/n02-two-job-pr-head/evidence/unit-windows-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/n03-three-job-pr-head/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/n03-three-job-pr-head/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/n03-three-job-pr-head/evidence/unit-linux-py313/receipt.json .tmp/fix-r1-tmp/fixtures-regen/n03-three-job-pr-head/evidence/unit-linux-py313/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/n03-three-job-pr-head/evidence/unit-windows-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/n03-three-job-pr-head/evidence/unit-windows-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/n04-single-merge-commit/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/n04-single-merge-commit/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/n05-two-job-merge-commit/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/n05-two-job-merge-commit/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/n05-two-job-merge-commit/evidence/unit-windows-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/n05-two-job-merge-commit/evidence/unit-windows-py312/receipt.json
+19a20
+>     "head_sha_after": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/n06-single-event-sha/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/n06-single-event-sha/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/n07-single-explicit-sha/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/n07-single-explicit-sha/evidence/unit-linux-py312/receipt.json
+18a19
+>     "head_sha_after": "cccccccccccccccccccccccccccccccccccccccc",
+20c21,22
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/n08-lcov-only/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/n08-lcov-only/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/n09-skipped-still-pass/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/n09-skipped-still-pass/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/n10-different-trees-allowed/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/n10-different-trees-allowed/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/n10-different-trees-allowed/evidence/unit-windows-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/n10-different-trees-allowed/evidence/unit-windows-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+---
+>     "tree_sha": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+>     "tree_sha_after": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/n11-different-attempts-allowed/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/n11-different-attempts-allowed/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/n11-different-attempts-allowed/evidence/unit-windows-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/n11-different-attempts-allowed/evidence/unit-windows-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/n12-min-tests-boundary/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/n12-min-tests-boundary/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/n13-junit-plus-lcov/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/n13-junit-plus-lcov/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/n13-junit-plus-lcov/evidence/unit-windows-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/n13-junit-plus-lcov/evidence/unit-windows-py312/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/n14-optional-fields-present/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/n14-optional-fields-present/evidence/unit-linux-py312/receipt.json
+21a22
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+23c24,25
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/n15-three-job-merge-commit/evidence/unit-linux-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/n15-three-job-merge-commit/evidence/unit-linux-py312/receipt.json
+19a20
+>     "head_sha_after": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/n15-three-job-merge-commit/evidence/unit-linux-py313/receipt.json .tmp/fix-r1-tmp/fixtures-regen/n15-three-job-merge-commit/evidence/unit-linux-py313/receipt.json
+19a20
+>     "head_sha_after": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/n15-three-job-merge-commit/evidence/unit-windows-py312/receipt.json .tmp/fix-r1-tmp/fixtures-regen/n15-three-job-merge-commit/evidence/unit-windows-py312/receipt.json
+19a20
+>     "head_sha_after": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+diff -r '--exclude=GOLDEN.json' .tmp/fix-r1-tmp/fixtures-before/n16-py313-single/evidence/unit-linux-py313/receipt.json .tmp/fix-r1-tmp/fixtures-regen/n16-py313-single/evidence/unit-linux-py313/receipt.json
+19a20
+>     "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+21c22,23
+<     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd"
+---
+>     "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+>     "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"

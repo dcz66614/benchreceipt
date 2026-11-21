@@ -1,0 +1,66 @@
++ export PATH=/home/hatch/workspace/p027-benchreceipt/.tmp/quickstart-bare/../../.venv/bin:/opt/hatch/bin:/opt/hatch-image/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/muse/skills/documents/scripts:/opt/muse/skills/generate_podcast/scripts:/opt/muse/skills/style-tryon/scripts
++ PATH=/home/hatch/workspace/p027-benchreceipt/.tmp/quickstart-bare/../../.venv/bin:/opt/hatch/bin:/opt/hatch-image/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/muse/skills/documents/scripts:/opt/muse/skills/generate_podcast/scripts:/opt/muse/skills/style-tryon/scripts
++ export PYTHONDONTWRITEBYTECODE=1
++ PYTHONDONTWRITEBYTECODE=1
++ unset GITHUB_SHA GITHUB_EVENT_NAME GITHUB_EVENT_PATH GITHUB_RUN_ID GITHUB_RUN_ATTEMPT GITHUB_WORKFLOW
++ git init -q -b main
++ git config user.email fix-p1-01@example.invalid
++ git config user.name FIX-P1-01
++ printf '__pycache__/\n.pytest_cache/\n.benchreceipt/\n'
++ printf 'def test_ok():\n    assert 1 == 1\n'
++ cat
++ git add -A
++ git commit -qm init
+++ git rev-parse HEAD
++ HEAD_SHA=256eb85c6888b1b54780f67eaa7ac2777e91acbe
++ git status --porcelain
++ echo 'clean-check exit: 0'
+clean-check exit: 0
++ which benchreceipt
+/home/hatch/workspace/p027-benchreceipt/.tmp/quickstart-bare/../../.venv/bin/benchreceipt
++ benchreceipt --help
+usage: benchreceipt [-h] <command> ...
+
+Local-first CI test-evidence binding: capture per-job receipts, verify them
+against a policy, and report the binding verdict.
+
+positional arguments:
+  <command>
+    capture   wrap a test command and write a benchreceipt.run/v1 receipt
+    verify    verify an evidence bundle against a policy
+    report    render a verification result as self-contained HTML
+    bundle    build or verify a portable evidence bundle
+
+options:
+  -h, --help  show this help message and exit
++ benchreceipt capture --job demo-linux-py312 --matrix os=ubuntu-latest,python=3.12 --junit .benchreceipt/out/junit.xml -- python -m pytest -q -p no:cacheprovider --junitxml=.benchreceipt/out/junit.xml
+.                                                                        [100%]
+1 passed in 0.01s
+benchreceipt capture: job=demo-linux-py312 exit=0 receipt=.benchreceipt/evidence/demo-linux-py312/receipt.json source_mutated=false
++ benchreceipt verify --policy .benchreceipt.toml --evidence .benchreceipt/evidence --expected-source-sha 256eb85c6888b1b54780f67eaa7ac2777e91acbe --out .benchreceipt/verification.json
+benchreceipt verify: status=BOUND_PASS jobs_verified=1 reason_codes=- out=.benchreceipt/verification.json
++ benchreceipt report --input .benchreceipt/verification.json --html .benchreceipt/report.html
+benchreceipt report: status=BOUND_PASS html=.benchreceipt/report.html
++ benchreceipt bundle --evidence .benchreceipt/evidence --out .benchreceipt/bundle
+benchreceipt bundle: built 2 files, 1954 bytes, manifest sha256=a4af0436054f3f2ba5730822f6785fbe8f053db854c7a42a1e565b7dda625148, out=.benchreceipt/bundle
++ benchreceipt bundle --verify .benchreceipt/bundle
+benchreceipt bundle: ok: 2 files checked, 2 manifest entries
++ echo '--- python -m regression check ---'
+--- python -m regression check ---
++ python -m benchreceipt --help
+usage: benchreceipt [-h] <command> ...
+
+Local-first CI test-evidence binding: capture per-job receipts, verify them
+against a policy, and report the binding verdict.
+
+positional arguments:
+  <command>
+    capture   wrap a test command and write a benchreceipt.run/v1 receipt
+    verify    verify an evidence bundle against a policy
+    report    render a verification result as self-contained HTML
+    bundle    build or verify a portable evidence bundle
+
+options:
+  -h, --help  show this help message and exit
++ python -m benchreceipt verify --policy .benchreceipt.toml --evidence .benchreceipt/evidence --expected-source-sha 256eb85c6888b1b54780f67eaa7ac2777e91acbe --out .benchreceipt/verification-module-form.json
+benchreceipt verify: status=BOUND_PASS jobs_verified=1 reason_codes=- out=.benchreceipt/verification-module-form.json

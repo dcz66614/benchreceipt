@@ -1,0 +1,6 @@
+source.zip entries: 355 git tree files: 355
+missing: []
+extra: []
+byte mismatches: 0
+dist.zip entries: ['INSTALL.txt', 'LICENSE', 'benchreceipt-0.1.0-py3-none-any.whl', 'benchreceipt-0.1.0.tar.gz']
+forbidden scan: {'__pycache__': 0, '.pyc': 0, '.venv': 0, '.pdf': 0, 'eyJ': 0, '/home/hatch': 0}

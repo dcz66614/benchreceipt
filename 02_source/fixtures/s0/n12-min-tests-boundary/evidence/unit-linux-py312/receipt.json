@@ -1,0 +1,59 @@
+{
+  "ci": {
+    "event_name": "pull_request",
+    "provider": "github-actions",
+    "run_attempt": 2,
+    "run_id": "9001",
+    "workflow": "CI"
+  },
+  "command": {
+    "argv_sha256": "c3f2578d3a465d10ae97391fe2a54f1c10832286381277ce1355ccfb0bbac529",
+    "display": "python -m pytest -q",
+    "exit_code": 0
+  },
+  "finished_at": "2026-11-17T07:00:05Z",
+  "git": {
+    "dirty_after": false,
+    "dirty_before": false,
+    "expected_source_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "head_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "head_sha_after": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "source_mode": "pr_head",
+    "tree_sha": "dddddddddddddddddddddddddddddddddddddddd",
+    "tree_sha_after": "dddddddddddddddddddddddddddddddddddddddd"
+  },
+  "job_id": "unit-linux-py312",
+  "junit": {
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "tests": 5
+  },
+  "matrix": {
+    "os": "ubuntu-latest",
+    "python": "3.12"
+  },
+  "reports": [
+    {
+      "kind": "junit",
+      "path": "artifacts/junit.xml",
+      "sha256": "66b3de7336f8edcd25f6e106338aabb0f86aa4f21c71df2545b985a730c960df",
+      "size_bytes": 367
+    }
+  ],
+  "runner": {
+    "arch": "x86_64",
+    "os": "Linux",
+    "python": "3.12.3"
+  },
+  "schema": "benchreceipt.run/v1",
+  "source_state_after": {
+    "dirty": false,
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_before": {
+    "dirty": false,
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "started_at": "2026-11-17T07:00:00Z"
+}

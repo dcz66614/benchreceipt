@@ -1,0 +1,64 @@
+== PROJECT_BOOK: MD headings=65 DOCX headings=64
+  MD-not-in-DOCX: ['P027 BenchReceipt（测证收据）项目书', '6.2 `benchreceipt.run/v1` 示例', '6.3 `.benchreceipt.toml` 示例']
+  DOCX-not-in-MD: ['6.2 benchreceipt.run/v1 示例', '6.3 .benchreceipt.toml 示例']
+  level mismatches: []
+  DOCX contains 'MISSING_FIELD': 3x | MD: 3x
+  DOCX contains 'ADR-007': 3x | MD: 3x
+  DOCX contains 'v1.2.0': 4x | MD: 5x
+== IMPLEMENTATION_PLAN: MD headings=44 DOCX headings=43
+  MD-not-in-DOCX: ['P027 BenchReceipt（测证收据）实施计划书']
+  DOCX-not-in-MD: []
+  level mismatches: []
+  DOCX contains 'MISSING_FIELD': 1x | MD: 1x
+  DOCX contains 'ADR-007': 2x | MD: 2x
+  DOCX contains 'v1.2.0': 4x | MD: 4x
+BOOK.docx key sentence: '两个 after 字段都缺失的收据无法证明运行中 HEAD/' -> True
+BOOK.docx key sentence: '两个字段仍保持可选（旧格式收据仍可解析，得 UNBOUND ' -> True
+BOOK.docx key sentence: '方案 A（builder 给全部现有夹具补上 after 字' -> True
+BOOK.docx key sentence: 'legacy 形状无 after 字段' -> False
+PLAN.docx key sentence: '两个 after 字段都缺失 → UNBOUND + `MI' -> False
+PLAN.docx key sentence: '冻结集 50 → 52，植入异常 34 → 36，parit' -> True
+PLAN.docx key sentence: '任何规格变化都增加 SPEC_VERSION 并同步两份 M' -> True
+BOOK.md §8.6: True | DOCX headings has 8.6: True
+PLAN.md §11.2: True | DOCX headings has 11.2: True
+== PROJECT_BOOK (tables included, backticks stripped)
+  'v1.2.0': DOCX 5x | MD 5x
+  'MISSING_FIELD': DOCX 3x | MD 3x
+  'ADR-007': DOCX 3x | MD 3x
+  '推翻 ADR-005 决策 4': DOCX 2x | MD 2x
+  'legacy 形状无 after 字段': DOCX 1x | MD 1x
+  '两个 after 字段都缺失': DOCX 4x | MD 4x
+  MD v1.2.0 line in DOCX: - git_head_sha_after / git_tree_sha_after（v1.1.0 新增，可选）：命令结束时的 HEAD / HEAD^{tree}。capture  -> False
+  MD v1.2.0 line in DOCX: **v1.1.0（ADR-005，P0-01 修复）：** 仅比较 porcelain diff 摘要与 dirty 标志无法发现 clean-tree HEAD 变化（check -> False
+  MD v1.2.0 line in DOCX: | legacy 形状无 after 字段（e7–e8，v1.2.0 新增） | 2 | 2/2 检出 | -> False
+  MD v1.2.0 line in DOCX: ### 8.6 v1.2.0 修订记录（ADR-007，2026-11-18） -> False
+  MD v1.2.0 line in DOCX: - 52 个冻结 S0 fixtures（e5/e6 由 v1.1.0 / ADR-005 增加；e7/e8 由 v1.2.0 / ADR-007 增加）。 -> False
+== IMPLEMENTATION_PLAN (tables included, backticks stripped)
+  'v1.2.0': DOCX 4x | MD 4x
+  'MISSING_FIELD': DOCX 1x | MD 1x
+  'ADR-007': DOCX 2x | MD 2x
+  '推翻 ADR-005 决策 4': DOCX 1x | MD 1x
+  'legacy 形状无 after 字段': DOCX 0x | MD 0x
+  '两个 after 字段都缺失': DOCX 1x | MD 1x
+  MD v1.2.0 line in DOCX: **规格版本：** v1.2.0 -> False
+  MD v1.2.0 line in DOCX: **权威需求：** PROJECT_BOOK.md v1.2.0 -> False
+  MD v1.2.0 line in DOCX: - 52 个 S0 fixture 在 S0 PASS 后冻结（e5/e6 由 v1.1.0 / ADR-005 在 S0 PASS 后增加，冻结集 48 -> 50；e7/e8  -> False
+  MD v1.2.0 line in DOCX: ### 11.2 v1.2.0 修订记录（ADR-007，2026-11-18） -> False
+BOOK: 'v1.2.0（ADR-007，P0-R1-01 修复，推翻 ADR-005 决策 4 的旧兼容规则）' -> True
+BOOK: '两个 after 字段都缺失的收据无法证明运行中 HEAD/tree 未变化，不得 BOUND_PASS' -> True
+BOOK: 'verify 一律记录 MISSING_FIELD（UNBOUND，exit 2），该 job jobs_verifie' -> True
+BOOK: '两个字段仍保持可选（旧格式收据仍可解析，得 UNBOUND 而非 INVALID）' -> True
+BOOK: '只出现其一时仍按原有规则判定为 SOURCE_MUTATED_DURING_RUN' -> True
+BOOK: 'e7（legacy clean checkout）与 n01（正常控制）的收据在删字段后逐字段相同' -> True
+BOOK: '方案 A（builder 给全部现有夹具补上 after 字段）是唯一自洽的修复' -> True
+BOOK: 'legacy 形状无 after 字段（e7–e8，v1.2.0 新增）' -> True
+BOOK: '合计 52 16 正常 + 36 植入异常' -> True
+PLAN: '两个 after 字段都缺失 -> UNBOUND + MISSING_FIELD' -> False
+PLAN: '冻结集 50 -> 52，植入异常 34 -> 36，parity 50/50 -> 52/52' -> False
+PLAN: '其余 50 个夹具重生成时只增加两个 after 字段（值与 before 一致），e5/e6 保持原样' -> True
+PLAN: '任何规格变化都增加 SPEC_VERSION 并同步两份 Markdown/DOCX' -> True
+PLAN: 'S0 固定 52 组案例：16 正常 + 36 植入异常' -> True
+
+CORRECTION (reviewer): the two PLAN "False" lines above were a check-script artifact —
+the search strings used ASCII "->" while the DOCX text uses U+2192 "→" and norm() did
+not translate it. Direct find on the DOCX paragraph text: "两个 after 字段都缺失 → UNBOUND + MISSING_FIELD" found at offset 136; "冻结集 50 → 52，植入异常 34 → 36，parity 50/50 → 52/52" is in the same paragraph (verbatim). DOCX/MD are fully consistent.

@@ -1,0 +1,21 @@
+.                                                                        [100%]
+1 passed in 0.01s
+.                                                                        [100%]
+1 passed in 0.01s
+explicit pin: ('explicit_sha', 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb')
+malformed pin rejected: 'NOT-A-SHA' -> expected_sha must be a 40-character lowercase hex SHA
+malformed pin rejected: 'AAAAAAAAAAAAAAAAAAA -> expected_sha must be a 40-character lowercase hex SHA
+malformed pin rejected: 'bbbbbbbbbbbbbbbbbbb -> expected_sha must be a 40-character lowercase hex SHA
+malformed pin rejected: 'bbbbbbbbbbbbbbbbbbb -> expected_sha must be a 40-character lowercase hex SHA
+malformed pin rejected: '' -> expected_sha must be a 40-character lowercase hex SHA
+malformed pin rejected: 123 -> expected_sha must be a 40-character lowercase hex SHA
+no pin (unchanged): ('event_sha', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+pinned capture source_mode = explicit_sha expected_source_sha = 2d6cad95b05d... head_sha = 2d6cad95b05d...
+verify pinned receipt vs explicit_sha policy -> BOUND_PASS [] jobs = 1
+wrong-pin capture: mode = explicit_sha head_sha = 2d6cad95b05d... expected = cccccccccccc...
+verify wrong-pin receipt vs explicit_sha policy (expected=pinned c*40) -> UNBOUND ['SOURCE_SHA_MISMATCH']
+verify wrong-pin receipt vs explicit_sha policy (expected=real head) -> BOUND_PASS [] (correct: tests did run on head; the pin only records intent)
+pin rejected: {'source_mode': 'explicit_sha', 'expected_sha': 'NOT-A-SHA'} -> invalid --expected-sha: expected_sha must be a 40-character lowercase hex SHA
+pin rejected: {'source_mode': 'explicit_sha'} -> --source-mode explicit_sha requires --expected-sha <40-hex-sha>
+pin rejected: {'expected_sha': '2d6cad95b05df79ed51d07c1baef3a004f6071f4'} -> --expected-sha requires --source-mode explicit_sha
+pin rejected: {'source_mode': 'pr_head', 'expected_sha': '2d6cad95b05df79ed51d07c1baef3a004f6071f4'} -> unsupported source_mode 'pr_head': capture supports only 'explicit_sha' (or none, for the CI-derived mode)

@@ -1,0 +1,51 @@
+01_spec/PROJECT_BOOK.md: 40942 B sha=de795a330f20... mirror identical=True
+01_spec/PROJECT_BOOK.docx: 62022 B sha=2a9394d37c68... mirror identical=True
+01_spec/IMPLEMENTATION_PLAN.md: 33788 B sha=41be8c66796b... mirror identical=True
+01_spec/IMPLEMENTATION_PLAN.docx: 56117 B sha=482badde4a9b... mirror identical=True
+SPEC_MANIFEST spec_version: 1.2.0
+Traceback (most recent call last):
+  File "<stdin>", line 14, in <module>
+KeyError: 'files'
+manifest keys: ['artifacts', 'human_participants', 'license', 'project_id', 'slug', 'spec_version', 'status', 'total_effort_hours']
+{
+ "project_id": "P027",
+ "slug": "benchreceipt",
+ "spec_version": "1.2.0",
+ "status": "SPECIFICATION_DRAFT / WAITING_OWNER_REVIEW / NO_CODE_BUILT",
+ "license": "MIT",
+ "human_participants": 0,
+ "total_effort_hours": 88,
+ "artifacts": [
+  {
+   "name": "PROJECT_BOOK.md",
+   "size_bytes": 40942,
+   "sha256": "de795a330f20241c3ec37a95e4297473d84792f23400def61c3422e26337b692"
+  },
+  {
+   "name": "PROJECT_BOOK.docx",
+   "size_bytes": 62022,
+   "sha256": "2a9394d37c68d95e5fed7e7817f65ba840b99612c0234d39f6e8a205d998ab6b"
+  },
+  {
+   "name": "IMPLEMENTATION_PLAN.md",
+   "size_bytes": 33788,
+   "sha256": "41be8c66796ba8aa1f2d68ca8faaa1f918c8093219d818ba9d4cb2723ca81afc"
+  },
+  {
+   "name": "IMPLEMENTATION_PLAN.docx",
+   "size_bytes": 56117,
+   "sha256": "482badde4a9b2a4a8d57a4396eff98612df1a93c7983ed5e1c2a3dc0782b816d"
+  }
+ ]
+}
+manifest PROJECT_BOOK.md: OK
+manifest PROJECT_BOOK.docx: OK
+manifest IMPLEMENTATION_PLAN.md: OK
+manifest IMPLEMENTATION_PLAN.docx: OK
+SHA256SUMS PROJECT_BOOK.md: OK
+SHA256SUMS PROJECT_BOOK.docx: OK
+SHA256SUMS IMPLEMENTATION_PLAN.md: OK
+SHA256SUMS IMPLEMENTATION_PLAN.docx: OK
+01_spec/PROJECT_BOOK.md SECRET_HINTS count: 1
+/home/hatch/workspace/p027-specs/PROJECT_BOOK.md SECRET_HINTS count: 1
+SPEC_SYNC VERDICT: CONVERGED 4/4

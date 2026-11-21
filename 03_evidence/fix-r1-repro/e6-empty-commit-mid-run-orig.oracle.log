@@ -1,0 +1,5 @@
+$ node /home/hatch/workspace/p027-benchreceipt/.tmp/fix-r1-repro-scratch/oracle/verify.mjs --policy /home/hatch/workspace/p027-benchreceipt/.tmp/fix-r1-repro-scratch/fixtures/s0/e6-empty-commit-mid-run/policy.toml --expected-source-sha aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa --evidence /home/hatch/workspace/p027-benchreceipt/.tmp/fix-r1-repro/e6-empty-commit-mid-run-orig/evidence
+exit=2
+--- stdout ---
+{"schema":"benchreceipt.result/v1","status":"UNBOUND","jobs_verified":0,"missing_jobs":[],"unexpected_jobs":[],"duplicate_jobs":[],"reason_codes":["SOURCE_MUTATED_DURING_RUN"],"identity_mismatches":[],"report_errors":[],"expected_source_mode":"pr_head"}
+--- stderr ---

@@ -1,0 +1,3 @@
+e7 receipt == e8 receipt (byte-identical by design): True
+receipts checked: 77, after-pairs added (==before): 75
+BAD: NONE — every change is only the two after fields

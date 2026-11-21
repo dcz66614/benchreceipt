@@ -1,0 +1,34 @@
+✔ TOML parser reads a real fixture policy (3.9202ms)
+✔ control fixture verifies BOUND_PASS via evaluate() (20.535563ms)
+✔ CLI contract: control fixture prints result JSON, exit 0 (117.958206ms)
+✔ spec §12.3 sample B: mixed attempt -> UNBOUND + RUN_ATTEMPT_MISMATCH, exit 2 (113.074731ms)
+✔ spec §12.3 sample C: wrong source SHA -> UNBOUND + SOURCE_SHA_MISMATCH (125.965917ms)
+✔ JUnit minimal parser: valid, empty, malformed (1.056264ms)
+✔ invalid policy -> INVALID result, no crash (0.417356ms)
+✔ missing evidence directory -> INVALID, not PASS (0.716896ms)
+✔ F-07 TOML: duplicate keys are rejected (1.210405ms)
+✔ F-07 TOML: trailing comments and string escapes match tomllib (1.094561ms)
+✔ F-02 LCOV: valid fixture parses; malformed inputs throw (2.13318ms)
+✔ F-02 evaluate: malformed LCOV is INVALID/LCOV_MALFORMED; valid LCOV passes (11.061392ms)
+✔ F-04 JUnit parser: CDATA/comments/namespaces/self-closing, malformed rejected (1.868252ms)
+✔ F-03/F-04 evaluate: attr mismatch malformed; CDATA/comment pass; self-closing failure fails (9.17992ms)
+✔ F-05 evaluate: symlinked report escaping the job dir is REPORT_HASH_MISMATCH (3.359619ms)
+✔ F-05 evaluate: symlink staying inside the job dir still verifies (3.272128ms)
+✔ F-05 resolveRealPath follows symlinks and dangling targets (10.482554ms)
+✔ F-06 evaluate: schema-invalid receipts are INVALID_RECEIPT (33.625057ms)
+✔ F-06 evaluate: schema-invalid policies are INVALID_POLICY (7.049435ms)
+✔ F-01 mirror evaluate: multi-JUnit gives the identical triple in both orders (7.470365ms)
+✔ F-08 CLI: pinned wrong run is UNBOUND with both codes; correct pin passes (517.378694ms)
+✔ F-08 CLI: invalid pins and SHAs are usage errors (exit 3, no result JSON) (623.379244ms)
+✔ F-08 evaluate: invalid pin values are an INTERNAL_ERROR result, like production (2.893821ms)
+✔ F-05 evaluate: symlinked receipt.json escaping the job dir is INVALID_RECEIPT (4.316415ms)
+✔ FIX-R1 (ADR-007): both after fields absent fails closed with MISSING_FIELD (178.798527ms)
+✔ FIX-R1 (ADR-007): e7 legacy fixture is UNBOUND + MISSING_FIELD via evaluate() and CLI (160.303404ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2125.982617

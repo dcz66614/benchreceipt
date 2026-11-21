@@ -1,0 +1,12 @@
+{
+  "duplicate_jobs": [],
+  "expected_source_mode": "pr_head",
+  "identity_mismatches": [],
+  "jobs_verified": 1,
+  "missing_jobs": [],
+  "reason_codes": [],
+  "report_errors": [],
+  "schema": "benchreceipt.result/v1",
+  "status": "BOUND_PASS",
+  "unexpected_jobs": []
+}

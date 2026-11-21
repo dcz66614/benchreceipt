@@ -1,0 +1,35 @@
+Processing ./benchreceipt-0.1.0-py3-none-any.whl
+Installing collected packages: benchreceipt
+Successfully installed benchreceipt-0.1.0
+usage: benchreceipt [-h] <command> ...
+
+Local-first CI test-evidence binding: capture per-job receipts, verify them
+against a policy, and report the binding verdict.
+
+positional arguments:
+  <command>
+    capture   wrap a test command and write a benchreceipt.run/v1 receipt
+    verify    verify an evidence bundle against a policy
+    report    render a verification result as self-contained HTML
+    bundle    build or verify a portable evidence bundle
+
+options:
+  -h, --help  show this help message and exit
+== capture ==
+benchreceipt capture: job=demo-linux-py312 exit=0 receipt=.benchreceipt/evidence/demo-linux-py312/receipt.json source_mutated=false
+capture exit=0
+== verify ==
+benchreceipt verify: status=BOUND_PASS jobs_verified=1 reason_codes=- out=.benchreceipt/verification.json
+verify exit=0
+{
+  "duplicate_jobs": [],
+  "expected_source_mode": "explicit_sha",
+  "identity_mismatches": [],
+  "jobs_verified": 1,
+  "missing_jobs": [],
+  "reason_codes": [],
+  "report_errors": [],
+  "schema": "benchreceipt.result/v1",
+  "status": "BOUND_PASS",
+  "unexpected_jobs": []
+}

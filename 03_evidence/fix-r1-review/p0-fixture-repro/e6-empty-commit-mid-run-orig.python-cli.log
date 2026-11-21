@@ -1,0 +1,5 @@
+$ benchreceipt verify --policy /home/hatch/workspace/p027-benchreceipt/02_source/fixtures/s0/e6-empty-commit-mid-run/policy.toml --evidence /home/hatch/workspace/p027-benchreceipt/.tmp/review-tmp/p0-fixture-repro/e6-empty-commit-mid-run/orig
+exit=2
+--- stdout ---
+benchreceipt verify: status=UNBOUND jobs_verified=0 reason_codes=SOURCE_MUTATED_DURING_RUN out=/home/hatch/workspace/p027-benchreceipt/.tmp/review-tmp/p0-fixture-repro/e6-empty-commit-mid-run-orig.python-result.json
+--- stderr ---

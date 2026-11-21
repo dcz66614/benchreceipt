@@ -1,0 +1,50 @@
+{
+  "ci": {
+    "provider": "generic",
+    "run_attempt": 1,
+    "run_id": "local",
+    "workflow": "local"
+  },
+  "command": {
+    "argv_sha256": "7bde66f06fdf0dbfc3de62d6036828404d3392ba3811ec51754d3095c310a27f",
+    "display": "python -m pytest -q -p no:cacheprovider --junitxml=.benchreceipt/out/junit.xml",
+    "exit_code": 0
+  },
+  "finished_at": "2026-11-17T07:21:59.729Z",
+  "git": {
+    "dirty_after": false,
+    "dirty_before": false,
+    "expected_source_sha": "46d7f09a45697674d0bac602fdb7909148bf8c6d",
+    "head_sha": "46d7f09a45697674d0bac602fdb7909148bf8c6d",
+    "source_mode": "event_sha",
+    "tree_sha": "97bdc8c0352887dc85936a308c35b5b35338929f"
+  },
+  "job_id": "smoke-pytest",
+  "matrix": {
+    "os": "ubuntu-latest",
+    "python": "3.12"
+  },
+  "reports": [
+    {
+      "kind": "junit",
+      "path": "artifacts/junit.xml",
+      "sha256": "798e299e65dc83843a7219b2b1c5d68f5adbfba003cf80c164229c9533d54c7f",
+      "size_bytes": 381
+    }
+  ],
+  "runner": {
+    "arch": "x86_64",
+    "os": "Linux",
+    "python": "3.12.3"
+  },
+  "schema": "benchreceipt.run/v1",
+  "source_state_after": {
+    "dirty": false,
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_before": {
+    "dirty": false,
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "started_at": "2026-11-17T07:21:59.205Z"
+}

@@ -1,0 +1,11 @@
+S0 gate: PASS (10/10 thresholds)
+  [PASS] 1. normal controls 16/16 BOUND_PASS: 16/16 controls BOUND_PASS (python+oracle)
+  [PASS] 2. planted faults 34/34 detected with correct reason code: 34/34 faults match Golden (status + reason codes, both impls)
+  [PASS] 3. False PASS = 0: false PASS count = 0
+  [PASS] 4. False block = 0: false block count = 0
+  [PASS] 5. production / Oracle parity 50/50: parity 50/50 fixtures
+  [PASS] 6. 100 replays 1 hash: 1 distinct canonical SHA-256 over 100 replays (hash a19054f11949ddd21f922556c07d7d51f0028dde09a18beb9b64e4b2e827d530)
+  [PASS] 7. 100 manifests P95 <= 1s: P95 = 0.07511585700012802s (perf script exit 0)
+  [PASS] 8. offline run, external network requests = 0: no network tokens in Python verifier / Node Oracle; perf network_requests=0
+  [PASS] 9. no full env/stdout/stderr/absolute user paths in receipts: 77 receipts scanned, 0 violations
+  [PASS] 10. reproducible logs + hashes: 50 fixtures inventoried; per-file SHA-256 recorded in this report

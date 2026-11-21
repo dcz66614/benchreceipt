@@ -1,0 +1,37 @@
+=== P027-T003 capture smoke test ===
+date (UTC): 2026-11-17T07:21:59Z
+smoke repo: /tmp/smoke-p027-t003
+
+$ rm -rf /tmp/smoke-p027-t003 && mkdir -p /tmp/smoke-p027-t003 && cd /tmp/smoke-p027-t003 && git init -q
+$ git rev-parse HEAD
+46d7f09a45697674d0bac602fdb7909148bf8c6d
+$ git rev-parse 'HEAD^{tree}'
+97bdc8c0352887dc85936a308c35b5b35338929f
+
+$ <venv>/bin/python -m benchreceipt capture --job smoke-pytest --matrix os=ubuntu-latest,python=3.12 --junit .benchreceipt/out/junit.xml -- <venv>/bin/python -m pytest -q -p no:cacheprovider --junitxml=.benchreceipt/out/junit.xml
+..                                                                       [100%]
+2 passed in 0.01s
+benchreceipt capture: job=smoke-pytest exit=0 receipt=.benchreceipt/evidence/smoke-pytest/receipt.json source_mutated=false
+CAPTURE_EXIT=0
+
+$ ls -R .benchreceipt
+.benchreceipt:
+evidence
+out
+
+.benchreceipt/evidence:
+smoke-pytest
+
+.benchreceipt/evidence/smoke-pytest:
+artifacts
+receipt.json
+
+.benchreceipt/evidence/smoke-pytest/artifacts:
+junit.xml
+
+.benchreceipt/out:
+junit.xml
+
+$ sha256sum .benchreceipt/out/junit.xml .benchreceipt/evidence/smoke-pytest/artifacts/junit.xml
+798e299e65dc83843a7219b2b1c5d68f5adbfba003cf80c164229c9533d54c7f  .benchreceipt/out/junit.xml
+798e299e65dc83843a7219b2b1c5d68f5adbfba003cf80c164229c9533d54c7f  .benchreceipt/evidence/smoke-pytest/artifacts/junit.xml

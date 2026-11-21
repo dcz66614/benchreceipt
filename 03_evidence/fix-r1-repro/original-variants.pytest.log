@@ -1,0 +1,15 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0 -- /home/hatch/workspace/p027-benchreceipt/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/hatch/workspace/p027-benchreceipt/.tmp/fix-r1-repro-scratch
+configfile: pyproject.toml
+collecting ... collected 6 items
+
+tests/adversarial/test_source_mutation_evasion.py::test_head_change_mid_run_is_detected PASSED [ 16%]
+tests/adversarial/test_source_mutation_evasion.py::test_empty_commit_mid_run_is_detected PASSED [ 33%]
+tests/adversarial/test_source_mutation_evasion.py::test_dirty_to_clean_flip_is_detected PASSED [ 50%]
+tests/capture/test_capture_after_identity.py::test_clean_capture_emits_after_identity_and_passes PASSED [ 66%]
+tests/capture/test_capture_after_identity.py::test_half_present_after_pair_fails_closed PASSED [ 83%]
+tests/capture/test_capture_after_identity.py::test_malformed_after_value_is_schema_invalid PASSED [100%]
+
+============================== 6 passed in 0.70s ===============================

@@ -1,0 +1,30 @@
+== pip install --no-index ==
+Processing ./.tmp/refreeze-tmp/offline-manual/benchreceipt-0.1.0-py3-none-any.whl
+Installing collected packages: benchreceipt
+Successfully installed benchreceipt-0.1.0
+pip exit=0
+== benchreceipt --help ==
+usage: benchreceipt [-h] <command> ...
+
+Local-first CI test-evidence binding: capture per-job receipts, verify them
+against a policy, and report the binding verdict.
+
+help exit=0
+== capture ==
+benchreceipt capture: job=demo-linux-py312 exit=0 receipt=.benchreceipt/evidence/demo-linux-py312/receipt.json source_mutated=false
+capture exit=0
+== verify ==
+benchreceipt verify: status=BOUND_PASS jobs_verified=1 reason_codes=- out=.benchreceipt/verification.json
+verify exit=0
+{
+  "duplicate_jobs": [],
+  "expected_source_mode": "explicit_sha",
+  "identity_mismatches": [],
+  "jobs_verified": 1,
+  "missing_jobs": [],
+  "reason_codes": [],
+  "report_errors": [],
+  "schema": "benchreceipt.result/v1",
+  "status": "BOUND_PASS",
+  "unexpected_jobs": []
+}

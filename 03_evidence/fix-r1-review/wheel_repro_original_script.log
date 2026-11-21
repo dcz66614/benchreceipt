@@ -1,0 +1,6 @@
+{"actual_final_head": "110cd0e48d27f20a6cc0597beba720f700e9b30f", "case": "clean_checkout", "legacy_shape_schema_valid": true, "no_after_jobs_verified": 0, "no_after_reason_codes": ["MISSING_FIELD"], "no_after_status": "UNBOUND", "original_expected_source_sha": "2bc72e1dd7443548fe6f761d8fd94fac37ffa819", "original_reason_codes": ["SOURCE_MUTATED_DURING_RUN"], "original_status": "UNBOUND", "receipt_sha256": "8f95f8ffe635315c7a0f7957cd0f37d43f93599765244b75286881ee7246e9a1", "recorded_after_sha": "110cd0e48d27f20a6cc0597beba720f700e9b30f", "was_mutated_during_run": true}
+Traceback (most recent call last):
+  File "/home/hatch/workspace/p027-benchreceipt/03_evidence/r1-repro/independent_p0_wheel_repro.py", line 45, in <module>
+    assert legacy['status']=='BOUND_PASS' and legacy['jobs_verified']==1
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

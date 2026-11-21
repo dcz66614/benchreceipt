@@ -1,0 +1,14 @@
+FAIL: verify_review_pack: 12 problem(s)
+  - EMPTY PACK (no inventory rows): REVIEW_PACK_FIXR1_01.md
+  - EMPTY PACK (no inventory rows): REVIEW_PACK_FIXR1_02.md
+  - EMPTY PACK (no inventory rows): REVIEW_PACK_FIXR1_03.md
+  - EMPTY PACK (no inventory rows): REVIEW_PACK_FIXR1_04.md
+  - EMPTY PACK (no inventory rows): REVIEW_PACK_FIXR1_05.md
+  - EMPTY PACK (no inventory rows): REVIEW_PACK_FIXR1_06.md
+  - PACK NOT LISTED IN INDEX: 04_review/REVIEW_PACK_FIXR1_01.md
+  - PACK NOT LISTED IN INDEX: 04_review/REVIEW_PACK_FIXR1_02.md
+  - PACK NOT LISTED IN INDEX: 04_review/REVIEW_PACK_FIXR1_03.md
+  - PACK NOT LISTED IN INDEX: 04_review/REVIEW_PACK_FIXR1_04.md
+  - PACK NOT LISTED IN INDEX: 04_review/REVIEW_PACK_FIXR1_05.md
+  - PACK NOT LISTED IN INDEX: 04_review/REVIEW_PACK_FIXR1_06.md
+  (index rows: 45; pack rows: 37; key production files at cfede2711bc5: 34; packs: 12)

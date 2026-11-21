@@ -1,0 +1,4 @@
+FAIL: verify_release: 3 problem(s)
+  - S0: manifest gates.s0_faults='34/34' != S0_GATE.json value '36/36'
+  - S0: manifest gates.s0_parity='50/50' != S0_GATE.json value '52/52'
+  - S0: manifest gates.s0_golden_sha256='65ccd954142d10cca5885277088924e7fec686047da77592a6eb8140d0ef7870' != S0_GATE.json value 'fb8e70a136aef710fb59d46addda99df71bafb18320afb23d75b61bf21560497'

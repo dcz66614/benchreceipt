@@ -1,0 +1,10 @@
+['curl', 'https://user:s3cret@example.com/x'] -> "curl 'https://[REDACTED]@example.com/x'"
+['curl', 'https://user@example.com/x'] -> "curl 'https://[REDACTED]@example.com/x'"
+['curl', 'http://admin:p4ss@internal.example:8080/a/b'] -> "curl 'http://[REDACTED]@internal.example:8080/a/b'"
+['pytest', '--KEY', 'hunter2'] -> "pytest '[REDACTED]' '[REDACTED]'"
+['pytest', '--Auth', 'hunter2'] -> "pytest '[REDACTED]' '[REDACTED]'"
+['pytest', '--PASSWD', 'hunter2'] -> "pytest '[REDACTED]' '[REDACTED]'"
+['pytest', '--Private-Key', 'hunter2'] -> "pytest '[REDACTED]' '[REDACTED]'"
+['pytest', '--CREDENTIAL=hunter2'] -> "pytest '[REDACTED]'"
+controls OK
+F-09 after-check: all forms redacted/shortened, controls intact

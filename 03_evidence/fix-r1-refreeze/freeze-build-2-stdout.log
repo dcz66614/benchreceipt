@@ -1,0 +1,4 @@
+OK: deterministic build from 66502f6255976b44b3efebb7da778ea8807b1ba1
+  source.zip: 355 files, 1156533 source bytes, sha256=873b4dc43252202b17432c619397254a480e2dcfe10b43b7404d14b0efcd420b
+  dist.zip: wheel=benchreceipt-0.1.0-py3-none-any.whl sdist=benchreceipt-0.1.0.tar.gz sha256=da900faf679551ab6599c2ed333923bc151032957ceba2542ff065a51fc1bacd
+  benchreceipt-66502f625597.bundle: sha256=86c4c82ed019803d349997c5708d62805b918c7b89675e181a20b5f4d00d0dc8

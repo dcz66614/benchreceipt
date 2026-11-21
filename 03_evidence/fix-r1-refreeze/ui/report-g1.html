@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BenchReceipt verification report — BOUND_FAIL</title>
+<style>
+
+:root { color-scheme: light dark; }
+* { box-sizing: border-box; }
+body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  margin: 0 auto; max-width: 1100px; padding: 0 16px 32px;
+  background: #ffffff; color: #111111; line-height: 1.5; }
+h1 { font-size: 1.4rem; margin: 0; }
+h2 { font-size: 1.15rem; border-bottom: 1px solid #999999; padding-bottom: 4px; }
+h3 { font-size: 1rem; margin: 0.4em 0; }
+code, .mono { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  overflow-wrap: anywhere; word-break: break-all; }
+.topbar { padding: 16px; margin: 16px 0; border-radius: 8px; border: 2px solid; }
+.topbar .status-line { font-size: 1.3rem; font-weight: 700; }
+.topbar p { margin: 0.4em 0; }
+.status-BOUND_PASS { background: #e6f4ea; border-color: #137333; color: #0b3d1e; }
+.status-BOUND_FAIL { background: #fce8e6; border-color: #a50e0e; color: #5f0b0b; }
+.status-UNBOUND { background: #fef7e0; border-color: #b06000; color: #4d2e00; }
+.status-INVALID { background: #fce8e6; border-color: #7a0d0d; color: #5f0b0b; }
+.status-INTERNAL_ERROR { background: #f1f3f4; border-color: #5f6368; color: #202124; }
+.status-UNKNOWN { background: #f1f3f4; border-color: #5f6368; color: #202124; }
+.tag { display: inline-block; font-weight: 700; font-size: 0.8rem;
+  border: 1px solid currentColor; border-radius: 4px; padding: 0 6px; margin-right: 4px; }
+.card { border: 1px solid #5f6368; border-radius: 8px; padding: 12px; margin: 8px 0; }
+.job-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.job-card { border: 1px solid #5f6368; border-radius: 8px; padding: 12px; }
+.job-card.missing { border-style: dashed; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid #80868b; padding: 6px 8px; text-align: left; vertical-align: top; }
+th { background: #f1f3f4; color: #202124; }
+ul { margin: 0.4em 0; }
+li { margin: 0.3em 0; }
+a { color: #0b57d0; }
+details { margin-top: 8px; }
+summary { cursor: pointer; font-weight: 600; }
+button.copy-btn { cursor: pointer; margin-left: 8px; }
+.note { background: #f1f3f4; color: #202124; border-left: 4px solid #5f6368;
+  padding: 8px 12px; margin: 8px 0; }
+footer { border-top: 2px solid #5f6368; margin-top: 24px; padding-top: 12px; font-size: 0.95rem; }
+@media (max-width: 400px) {
+  body { padding: 0 8px 24px; }
+  .job-grid { grid-template-columns: 1fr; }
+  .topbar .status-line { font-size: 1.1rem; }
+  table, thead, tbody, th, td, tr { display: block; width: 100%; }
+  th { display: none; }
+  td { border: none; border-bottom: 1px solid #dadce0; padding: 4px 0; }
+  td::before { content: attr(data-label) ": "; font-weight: 700; }
+}
+@media (prefers-color-scheme: dark) {
+  body { background: #202124; color: #e8eaed; }
+  a { color: #8ab4f8; }
+  th { background: #3c4043; color: #e8eaed; }
+  .status-BOUND_PASS { background: #0d3b1e; border-color: #81c995; color: #ceead6; }
+  .status-BOUND_FAIL { background: #3d0d0d; border-color: #f28b82; color: #fad2cf; }
+  .status-UNBOUND { background: #3d2c00; border-color: #fdd663; color: #feefc3; }
+  .status-INVALID { background: #3d0d0d; border-color: #f28b82; color: #fad2cf; }
+  .status-INTERNAL_ERROR, .status-UNKNOWN { background: #3c4043; border-color: #9aa0a6; color: #e8eaed; }
+  .card, .job-card { border-color: #9aa0a6; }
+  .note { background: #3c4043; color: #e8eaed; }
+}
+
+</style>
+</head>
+<body>
+<header class="topbar status-bound_fail" role="banner">
+<h1>BenchReceipt verification report</h1>
+<p class="status-line"><span aria-hidden="true">✗</span> Status: BOUND_FAIL — Bound but failing</p>
+<p>The evidence belongs to the expected source and run, but tests failed or a policy condition on the test result failed.</p>
+<p>Jobs verified: <strong>0</strong> &nbsp;|&nbsp; Expected source mode: <strong>pr_head</strong> &nbsp;|&nbsp; Reason codes: <strong>JUNIT_FAILED</strong></p>
+</header>
+<main>
+<section aria-labelledby="source-identity">
+<h2 id="source-identity">Source identity</h2>
+<p>Expected source mode: <strong>pr_head</strong></p>
+<p>Expected source SHA: not recorded in this verification result — the verification result records the expected SHA only when a job mismatches it; see the per-job receipts for the checked-out HEAD.</p>
+<p class="note">No identity mismatches recorded — every checked job matched the expected source, run, and workflow identity. Actual HEAD / tree SHAs are not carried by benchreceipt.result/v1 when they match; see the per-job receipts for the values.</p></section>
+<section aria-labelledby="job-matrix">
+<h2 id="job-matrix">Job matrix</h2>
+<p>One card per job named in this verification result (missing, unexpected, duplicate, mismatching, or with report errors). benchreceipt.result/v1 does not carry per-job OS, runtime, run ID, attempt, or test counts, so those fields are not shown here — see the per-job receipts for them. Click a card's heading to expand its recorded findings.</p>
+<div class="job-grid">
+<article class="job-card" id="job-unit-linux-py312" aria-label="Job unit-linux-py312">
+<h3>unit-linux-py312</h3>
+<p><span class="tag">REPORT ERROR</span></p>
+<details>
+<summary>Recorded findings</summary>
+<h3>Report errors</h3>
+<ul>
+<li><strong>JUNIT_FAILED</strong>: JUnit failed: 2 failures, 0 errors (tests=10) <span class="mono">(artifacts/junit.xml)</span></li></ul></details>
+</article>
+</div>
+</section>
+<section aria-labelledby="anomalies">
+<h2 id="anomalies">Anomalies — evidence chain, first inconsistency</h2>
+<p>Each item links to the job card it concerns (click-to-locate). Reason codes are shown with their meaning in words, not by colour alone.</p>
+<ul>
+<li><strong>JUNIT_FAILED</strong> <span class="tag">BOUND_FAIL</span> — Evidence is bound, but the JUnit report has failures or errors.<button type="button" class="copy-btn" data-text="JUNIT_FAILED: Evidence is bound, but the JUnit report has failures or errors.">Copy summary</button></li><li><strong>JUNIT_FAILED</strong>: JUnit failed: 2 failures, 0 errors (tests=10) <span class="mono">(artifacts/junit.xml)</span> <a href="#job-unit-linux-py312">locate job unit-linux-py312</a><button type="button" class="copy-btn" data-text="JUNIT_FAILED: JUnit failed: 2 failures, 0 errors (tests=10) (artifacts/junit.xml)">Copy summary</button></li></ul>
+</section>
+<section aria-labelledby="artifacts">
+<h2 id="artifacts">Artifacts</h2>
+<p>Artifact files named by this verification result (only artifacts with a recorded problem are named here).</p>
+<table>
+<thead><tr><th>File</th><th>Problem codes</th><th>Jobs</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><td data-label="File" class="mono">artifacts/junit.xml</td><td data-label="Problem codes">JUNIT_FAILED</td><td data-label="Jobs">unit-linux-py312</td><td data-label="Detail">JUnit failed: 2 failures, 0 errors (tests=10)</td></tr></tbody>
+</table>
+<p class="note">SHA-256 digests, sizes, and parse summaries are not carried by benchreceipt.result/v1; they are recorded in the per-job receipts and the bundle manifest (SHA256SUMS). A file with no row here had no problem recorded — that is not, by itself, a digest check; the digest check happened during verification and its outcome is the status above.</p>
+</section>
+</main>
+<footer>
+<h2>What this tool can and cannot prove</h2>
+<p><strong>BenchReceipt can prove:</strong> whether the Git commit / tree, run environment, command summary, CI run and attempt, job and matrix, and report bytes collected in the current workspace satisfy the declared binding rules — and where the first inconsistency is, when they do not.</p>
+<p><strong>BenchReceipt cannot prove:</strong> that the test logic is correct, that test assertions are strong enough, that the code has no bugs, or that a workflow author did not maliciously forge environment variables or reports. SHA-256 detects accidental mix-ups and byte changes; it is not a cryptographic signature and does not authenticate a malicious runner. This report does not replace SLSA, in-toto, Sigstore, or GitHub Artifact Attestations.</p>
+<p>BenchReceipt version: <strong>0.1.0</strong> &nbsp;|&nbsp; Renderer: P027-T010 static HTML renderer (inline CSS/JS only, no external resources, no network requests). This page renders only the verification JSON; it does not re-run verification.</p>
+</footer>
+<script>
+
+document.addEventListener("click", function (event) {
+  var btn = event.target.closest ? event.target.closest("button.copy-btn") : null;
+  if (!btn) { return; }
+  var text = btn.getAttribute("data-text") || "";
+  var done = function () { btn.textContent = "Copied"; };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done, function () { btn.textContent = "Copy failed"; });
+  } else { btn.textContent = "Copy unavailable"; }
+});
+
+</script>
+</body>
+</html>

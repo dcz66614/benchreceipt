@@ -1,0 +1,82 @@
+[
+ {
+  "case": "e5-clean-tree-head-change",
+  "variant": "orig",
+  "impl": "python-cli",
+  "status": "UNBOUND",
+  "reason_codes": [
+   "SOURCE_MUTATED_DURING_RUN"
+  ],
+  "jobs_verified": 0,
+  "exit": 2
+ },
+ {
+  "case": "e5-clean-tree-head-change",
+  "variant": "orig",
+  "impl": "oracle",
+  "status": "UNBOUND",
+  "reason_codes": [
+   "SOURCE_MUTATED_DURING_RUN"
+  ],
+  "jobs_verified": 0,
+  "exit": 2
+ },
+ {
+  "case": "e5-clean-tree-head-change",
+  "variant": "legacy",
+  "impl": "python-cli",
+  "status": "BOUND_PASS",
+  "reason_codes": [],
+  "jobs_verified": 1,
+  "exit": 0
+ },
+ {
+  "case": "e5-clean-tree-head-change",
+  "variant": "legacy",
+  "impl": "oracle",
+  "status": "BOUND_PASS",
+  "reason_codes": [],
+  "jobs_verified": 1,
+  "exit": 0
+ },
+ {
+  "case": "e6-empty-commit-mid-run",
+  "variant": "orig",
+  "impl": "python-cli",
+  "status": "UNBOUND",
+  "reason_codes": [
+   "SOURCE_MUTATED_DURING_RUN"
+  ],
+  "jobs_verified": 0,
+  "exit": 2
+ },
+ {
+  "case": "e6-empty-commit-mid-run",
+  "variant": "orig",
+  "impl": "oracle",
+  "status": "UNBOUND",
+  "reason_codes": [
+   "SOURCE_MUTATED_DURING_RUN"
+  ],
+  "jobs_verified": 0,
+  "exit": 2
+ },
+ {
+  "case": "e6-empty-commit-mid-run",
+  "variant": "legacy",
+  "impl": "python-cli",
+  "status": "BOUND_PASS",
+  "reason_codes": [],
+  "jobs_verified": 1,
+  "exit": 0
+ },
+ {
+  "case": "e6-empty-commit-mid-run",
+  "variant": "legacy",
+  "impl": "oracle",
+  "status": "BOUND_PASS",
+  "reason_codes": [],
+  "jobs_verified": 1,
+  "exit": 0
+ }
+]

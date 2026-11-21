@@ -1,0 +1,5 @@
+$ node /home/hatch/workspace/p027-benchreceipt/.tmp/fix-r1-tmp/fixed-tree/oracle/verify.mjs --policy /home/hatch/workspace/p027-benchreceipt/.tmp/fix-r1-tmp/fixed-tree/fixtures/s0/e5-clean-tree-head-change/policy.toml --expected-source-sha aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa --evidence /home/hatch/workspace/p027-benchreceipt/.tmp/fix-r1-tmp/post-fix-repro/e5-clean-tree-head-change-legacy/evidence
+exit=2
+--- stdout ---
+{"schema":"benchreceipt.result/v1","status":"UNBOUND","jobs_verified":0,"missing_jobs":[],"unexpected_jobs":[],"duplicate_jobs":[],"reason_codes":["MISSING_FIELD"],"identity_mismatches":[],"report_errors":[{"code":"MISSING_FIELD","message":"missing git.head_sha_after and git.tree_sha_after","job_id":"unit-linux-py312"}],"expected_source_mode":"pr_head"}
+--- stderr ---

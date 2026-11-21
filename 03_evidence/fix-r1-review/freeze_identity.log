@@ -1,0 +1,27 @@
+source.zip entries: 355
+frozen tree 02_source files: 355
+zip name sample: ['LICENSE', 'README.md', 'docs/BUNDLE_FORMAT.md']
+missing in zip: 355 ['02_source/LICENSE', '02_source/README.md', '02_source/docs/BUNDLE_FORMAT.md', '02_source/docs/LIMITATIONS.md', '02_source/docs/README.md']
+extra in zip: 355 ['LICENSE', 'README.md', 'docs/BUNDLE_FORMAT.md', 'docs/LIMITATIONS.md', 'docs/README.md']
+Traceback (most recent call last):
+  File "<stdin>", line 22, in <module>
+  File "/usr/lib/python3.12/zipfile/__init__.py", line 1580, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/zipfile/__init__.py", line 1617, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/zipfile/__init__.py", line 1545, in getinfo
+    raise KeyError(
+KeyError: "There is no item named '02_source/LICENSE' in the archive"
+source.zip entries: 355; frozen tree files (prefix stripped): 355
+missing in zip: 0 []
+extra in zip: 0 []
+byte mismatches: 0 []
+VERDICT: source.zip == frozen tree 66502f6 (355/355, byte-identical)
+source.zip bytes: 431740 sha256: 873b4dc43252202b17432c619397254a480e2dcfe10b43b7404d14b0efcd420b
+dist.zip bytes: 152883 sha256: da900faf679551ab6599c2ed333923bc151032957ceba2542ff065a51fc1bacd
+dist.zip entries: [('INSTALL.txt', 721), ('LICENSE', 1082), ('benchreceipt-0.1.0-py3-none-any.whl', 80150), ('benchreceipt-0.1.0.tar.gz', 73336)]
+wheel: benchreceipt-0.1.0-py3-none-any.whl entries: 27
+wheel schemas: ['benchreceipt/schemas/policy.v1.json', 'benchreceipt/schemas/result.v1.json', 'benchreceipt/schemas/run.v1.json']
+wheel METADATA license/requires: ['Name: benchreceipt', 'Version: 0.1.0', 'License-Expression: MIT', 'Requires-Python: >=3.12', 'License-File: LICENSE']

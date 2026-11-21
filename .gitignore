@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+# Persistent-disk temp dir for pytest (small /tmp tmpfs — see 00_control/ENVIRONMENT.md)
+.tmp/
+# Build / release artefacts (produced by T014, not committed as loose files)
+dist/
+build/
+*.zip
+# Capture output: `benchreceipt capture` writes .benchreceipt/evidence/
+# into the repo it runs in (incl. this repo during tests) — never commit it.
+.benchreceipt/
+# OS / editor
+.DS_Store

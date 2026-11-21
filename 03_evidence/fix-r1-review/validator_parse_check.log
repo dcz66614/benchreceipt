@@ -1,0 +1,9 @@
+index rows parsed: 43 (expect 43)
+rows mismatching blob/working-tree: 0 []
+pack 01 rows parsed: 5
+pack 02 rows parsed: 4
+pack 03 rows parsed: 7
+pack 04 rows parsed: 6
+pack 05 rows parsed: 3
+pack 06 rows parsed: 12
+Frozen candidate commit parsed: 66502f6255976b44b3efebb7da778ea8807b1ba1

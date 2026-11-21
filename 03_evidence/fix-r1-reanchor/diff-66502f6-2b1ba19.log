@@ -1,0 +1,16 @@
+=== git diff 66502f6..2b1ba19 -- 02_source (names) ===
+02_source/scripts/check_review_coverage.py
+02_source/scripts/verify_review_pack.py
+=== git diff 66502f6..2b1ba19 --stat -- 02_source ===
+ 02_source/scripts/check_review_coverage.py | 101 ++++++++++++++++++++++++-----
+ 02_source/scripts/verify_review_pack.py    |  52 ++++++++++++---
+ 2 files changed, 129 insertions(+), 24 deletions(-)
+=== git diff 66502f6..2b1ba19 -- 02_source (full, for the record) ===
+diff --git a/02_source/scripts/check_review_coverage.py b/02_source/scripts/check_review_coverage.py
+index a3113ba..60e0d2a 100644
+--- a/02_source/scripts/check_review_coverage.py
++++ b/02_source/scripts/check_review_coverage.py
+@@ -22,15 +22,32 @@ modifies the tree or the CSV.
+=== key-files diff (34 key files only, must be empty) ===
+key count: 34
+0

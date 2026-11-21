@@ -1,0 +1,1 @@
+PASS: verify_release: frozen commit 2b1ba19f7f461e2fc9acbf3c7c392d2d21edbd09, source.zip matches the frozen tree file-by-file, manifest + SHA256SUMS verified, LICENSE MIT in both zips, deps == 0, S0 52/52 + repeat-100 1 hash, bundle clones, offline install checked

@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "benchreceipt"
+version = "0.1.0"
+description = "Local-first CI test-evidence binding: receipts that prove which commit, run, attempt, matrix job and report digests a green test result belongs to."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+authors = [
+    { name = "BenchReceipt contributors" },
+]
+keywords = ["ci", "github-actions", "test-evidence", "provenance", "junit", "lcov"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Testing",
+]
+
+# Runtime dependencies: NONE by design (PROJECT_BOOK §10 / IMPLEMENTATION_PLAN §0.2.5).
+# The product runs on the Python 3.12 standard library only.
+dependencies = []
+
+# Console script (FIX-P1-01): PROJECT_BOOK §6.4 documents the CLI as bare
+# `benchreceipt capture/verify/report/bundle`, and
+# `examples/github-actions/ci.yml` runs bare `benchreceipt capture` /
+# `benchreceipt verify` steps. Before this entry point existed, an
+# editable install produced no `benchreceipt` executable at all (only
+# `python -m benchreceipt` worked), so the documented CI steps failed
+# with "command not found" on a real runner. `cli.main` returns an int
+# exit code, which console scripts use as the process exit code.
+[project.scripts]
+benchreceipt = "benchreceipt.cli:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest==9.2.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# T014-F1: ship the frozen JSON Schemas as package data. The schemas
+# live at src/benchreceipt/schemas/ (inside the package) so that
+# setuptools places them at benchreceipt/schemas/*.json in the wheel,
+# which is the packaged Layout 2 that schema.py::_schemas_dir()
+# looks for. A glob pointing at the old 02_source/schemas/ location
+# (outside the package) does NOT work: setuptools resolves
+# package-data globs relative to the package directory and silently
+# drops non-matching globs (verified 2026-11-18: the literal
+# ["schemas/*.json"] stanza with schemas/ outside the package, and
+# ["../schemas/*.json"] / ["../../schemas/*.json"] escapes, all
+# produce wheels with zero schemas/ — the ".." form only lands the
+# files in the sdist / outside the package in build/lib, where
+# install_lib never picks them up for the wheel).
+[tool.setuptools.package-data]
+benchreceipt = ["schemas/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

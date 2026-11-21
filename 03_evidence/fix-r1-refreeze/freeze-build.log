@@ -1,0 +1,29 @@
+freeze build log (P027-T014)
+commit: 66502f6255976b44b3efebb7da778ea8807b1ba1
+epoch: 1794974631
+source.zip: 873b4dc43252202b17432c619397254a480e2dcfe10b43b7404d14b0efcd420b
+dist.zip: da900faf679551ab6599c2ed333923bc151032957ceba2542ff065a51fc1bacd
+benchreceipt-66502f625597.bundle: 86c4c82ed019803d349997c5708d62805b918c7b89675e181a20b5f4d00d0dc8
+commands:
+  $ git -C /home/hatch/workspace/p027-benchreceipt ls-tree -r --format=%(objectmode) %(objecttype) %(objectname)%x09%(path) 66502f6255976b44b3efebb7da778ea8807b1ba1 -- 02_source
+  $ find . -exec touch -h -d @1794974631 {} +
+  $ /home/hatch/workspace/p027-benchreceipt/02_source/../.venv/bin/python -m pip download --no-deps -d /home/hatch/workspace/p027-benchreceipt/.tmp/refreeze-tmp/freeze-work/run1/build-deps setuptools==80.9.0
+  $ /home/hatch/workspace/p027-benchreceipt/02_source/../.venv/bin/python -m pip download --no-deps -d /home/hatch/workspace/p027-benchreceipt/.tmp/refreeze-tmp/freeze-work/run1/build-deps wheel==0.45.1
+  $ /home/hatch/workspace/p027-benchreceipt/02_source/../.venv/bin/python -m pip download --no-deps -d /home/hatch/workspace/p027-benchreceipt/.tmp/refreeze-tmp/freeze-work/run1/build-deps build==1.2.2
+  $ /home/hatch/workspace/p027-benchreceipt/02_source/../.venv/bin/python -m pip download --no-deps -d /home/hatch/workspace/p027-benchreceipt/.tmp/refreeze-tmp/freeze-work/run1/build-deps pyproject_hooks==1.2.0
+  $ /home/hatch/workspace/p027-benchreceipt/02_source/../.venv/bin/python -m pip download --no-deps -d /home/hatch/workspace/p027-benchreceipt/.tmp/refreeze-tmp/freeze-work/run1/build-deps packaging==25.0
+  $ /home/hatch/workspace/p027-benchreceipt/02_source/../.venv/bin/python -m build --no-isolation --outdir /home/hatch/workspace/p027-benchreceipt/.tmp/refreeze-tmp/freeze-work/run1/dist-out .
+  $ git -C /home/hatch/workspace/p027-benchreceipt for-each-ref --format=%(refname) --points-at 66502f6255976b44b3efebb7da778ea8807b1ba1
+  $ git -c pack.threads=1 -C /home/hatch/workspace/p027-benchreceipt bundle create /home/hatch/workspace/p027-benchreceipt/.tmp/refreeze-tmp/freeze-work/run1/out/benchreceipt-66502f625597.bundle refs/heads/fix-r1
+  $ git -C /home/hatch/workspace/p027-benchreceipt bundle verify /home/hatch/workspace/p027-benchreceipt/.tmp/refreeze-tmp/freeze-work/run1/out/benchreceipt-66502f625597.bundle
+  $ git -C /home/hatch/workspace/p027-benchreceipt ls-tree -r --format=%(objectmode) %(objecttype) %(objectname)%x09%(path) 66502f6255976b44b3efebb7da778ea8807b1ba1 -- 02_source
+  $ find . -exec touch -h -d @1794974631 {} +
+  $ /home/hatch/workspace/p027-benchreceipt/02_source/../.venv/bin/python -m pip download --no-deps -d /home/hatch/workspace/p027-benchreceipt/.tmp/refreeze-tmp/freeze-work/run2/build-deps setuptools==80.9.0
+  $ /home/hatch/workspace/p027-benchreceipt/02_source/../.venv/bin/python -m pip download --no-deps -d /home/hatch/workspace/p027-benchreceipt/.tmp/refreeze-tmp/freeze-work/run2/build-deps wheel==0.45.1
+  $ /home/hatch/workspace/p027-benchreceipt/02_source/../.venv/bin/python -m pip download --no-deps -d /home/hatch/workspace/p027-benchreceipt/.tmp/refreeze-tmp/freeze-work/run2/build-deps build==1.2.2
+  $ /home/hatch/workspace/p027-benchreceipt/02_source/../.venv/bin/python -m pip download --no-deps -d /home/hatch/workspace/p027-benchreceipt/.tmp/refreeze-tmp/freeze-work/run2/build-deps pyproject_hooks==1.2.0
+  $ /home/hatch/workspace/p027-benchreceipt/02_source/../.venv/bin/python -m pip download --no-deps -d /home/hatch/workspace/p027-benchreceipt/.tmp/refreeze-tmp/freeze-work/run2/build-deps packaging==25.0
+  $ /home/hatch/workspace/p027-benchreceipt/02_source/../.venv/bin/python -m build --no-isolation --outdir /home/hatch/workspace/p027-benchreceipt/.tmp/refreeze-tmp/freeze-work/run2/dist-out .
+  $ git -C /home/hatch/workspace/p027-benchreceipt for-each-ref --format=%(refname) --points-at 66502f6255976b44b3efebb7da778ea8807b1ba1
+  $ git -c pack.threads=1 -C /home/hatch/workspace/p027-benchreceipt bundle create /home/hatch/workspace/p027-benchreceipt/.tmp/refreeze-tmp/freeze-work/run2/out/benchreceipt-66502f625597.bundle refs/heads/fix-r1
+  $ git -C /home/hatch/workspace/p027-benchreceipt bundle verify /home/hatch/workspace/p027-benchreceipt/.tmp/refreeze-tmp/freeze-work/run2/out/benchreceipt-66502f625597.bundle

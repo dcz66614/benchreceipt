@@ -1,0 +1,5 @@
+$ node /home/hatch/workspace/p027-benchreceipt/.tmp/fix-r1-repro-scratch/oracle/verify.mjs --policy /home/hatch/workspace/p027-benchreceipt/.tmp/fix-r1-repro-scratch/fixtures/s0/e5-clean-tree-head-change/policy.toml --expected-source-sha aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa --evidence /home/hatch/workspace/p027-benchreceipt/.tmp/fix-r1-repro/e5-clean-tree-head-change-legacy/evidence
+exit=0
+--- stdout ---
+{"schema":"benchreceipt.result/v1","status":"BOUND_PASS","jobs_verified":1,"missing_jobs":[],"unexpected_jobs":[],"duplicate_jobs":[],"reason_codes":[],"identity_mismatches":[],"report_errors":[],"expected_source_mode":"pr_head"}
+--- stderr ---

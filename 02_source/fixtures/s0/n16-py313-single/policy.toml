@@ -1,0 +1,20 @@
+schema_version = 1
+source_mode = "pr_head"
+expected_workflow = "CI"
+required_jobs = [
+  "unit-linux-py313"
+]
+min_tests = 1
+require_clean_source_after = true
+same_tree_across_jobs = true
+same_run_id = true
+same_run_attempt = true
+
+[reports]
+junit = "required"
+lcov = "optional"
+
+[security]
+store_stdout = false
+store_stderr = false
+store_full_environment = false

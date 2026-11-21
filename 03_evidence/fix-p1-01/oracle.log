@@ -1,0 +1,16 @@
+✔ TOML parser reads a real fixture policy (3.160053ms)
+✔ control fixture verifies BOUND_PASS via evaluate() (13.661131ms)
+✔ CLI contract: control fixture prints result JSON, exit 0 (104.009177ms)
+✔ spec §12.3 sample B: mixed attempt -> UNBOUND + RUN_ATTEMPT_MISMATCH, exit 2 (111.880239ms)
+✔ spec §12.3 sample C: wrong source SHA -> UNBOUND + SOURCE_SHA_MISMATCH (89.249868ms)
+✔ JUnit minimal parser: valid, empty, malformed (0.603175ms)
+✔ invalid policy -> INVALID result, no crash (0.41973ms)
+✔ missing evidence directory -> INVALID, not PASS (0.56637ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 459.058822
