@@ -1,0 +1,32 @@
+P027-T008 exit-code demo log (real CLI: .venv/bin/python -m benchreceipt verify)
+date_utc: 2026-11-17T08:05:11Z
+---
+$ .venv/bin/python -m benchreceipt verify --policy 02_source/fixtures/s0/n01-single-pr-head/policy.toml --evidence 02_source/fixtures/s0/n01-single-pr-head/evidence --expected-source-sha $sha --out .tmp/t008demo/n01-single-pr-head.json
+benchreceipt verify: status=BOUND_PASS jobs_verified=1 reason_codes=- out=.tmp/t008demo/n01-single-pr-head.json
+exit=0
+---
+$ .venv/bin/python -m benchreceipt verify --policy 02_source/fixtures/s0/g1-junit-failed/policy.toml --evidence 02_source/fixtures/s0/g1-junit-failed/evidence --expected-source-sha $sha --out .tmp/t008demo/g1-junit-failed.json
+benchreceipt verify: status=BOUND_FAIL jobs_verified=0 reason_codes=JUNIT_FAILED out=.tmp/t008demo/g1-junit-failed.json
+exit=1
+---
+$ .venv/bin/python -m benchreceipt verify --policy 02_source/fixtures/s0/d1-matrix-missing/policy.toml --evidence 02_source/fixtures/s0/d1-matrix-missing/evidence --expected-source-sha $sha --out .tmp/t008demo/d1-matrix-missing.json
+benchreceipt verify: status=UNBOUND jobs_verified=1 reason_codes=MATRIX_MISSING_JOB out=.tmp/t008demo/d1-matrix-missing.json
+exit=2
+---
+$ .venv/bin/python -m benchreceipt verify --policy 02_source/fixtures/s0/f2-report-hash-mismatch/policy.toml --evidence 02_source/fixtures/s0/f2-report-hash-mismatch/evidence --expected-source-sha $sha --out .tmp/t008demo/f2-report-hash-mismatch.json
+benchreceipt verify: status=INVALID jobs_verified=0 reason_codes=REPORT_HASH_MISMATCH out=.tmp/t008demo/f2-report-hash-mismatch.json
+exit=3
+---
+$ .venv/bin/python -m benchreceipt verify --policy 02_source/fixtures/s0/h4-missing-command/policy.toml --evidence 02_source/fixtures/s0/h4-missing-command/evidence --expected-source-sha $sha --out .tmp/t008demo/h4-missing-command.json
+benchreceipt verify: status=INVALID jobs_verified=0 reason_codes=INVALID_RECEIPT out=.tmp/t008demo/h4-missing-command.json
+exit=3
+---
+$ .venv/bin/python -m benchreceipt verify --policy 02_source/fixtures/s0/n01-single-pr-head/policy.toml --evidence 02_source/fixtures/s0/n01-single-pr-head/evidence --out .tmp/t008demo/nosha.json   # missing --expected-source-sha
+exit=3 (missing --expected-source-sha -> INVALID, never a pass)
+---
+$ .venv/bin/python -m benchreceipt verify --policy 02_source/fixtures/s0/n01-single-pr-head/policy.toml --evidence 02_source/fixtures/s0/n01-single-pr-head/evidence --expected-source-sha aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa --expected-run-id 9001 --out .tmp/t008demo/pin-ok.json
+benchreceipt verify: status=BOUND_PASS jobs_verified=1 reason_codes=- out=.tmp/t008demo/pin-ok.json
+exit=0 (pinned run-id matches)
+$ .venv/bin/python -m benchreceipt verify --policy 02_source/fixtures/s0/n01-single-pr-head/policy.toml --evidence 02_source/fixtures/s0/n01-single-pr-head/evidence --expected-source-sha aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa --expected-run-id 9002 --out .tmp/t008demo/pin-bad.json
+benchreceipt verify: status=UNBOUND jobs_verified=0 reason_codes=RUN_ID_MISMATCH out=.tmp/t008demo/pin-bad.json
+exit=2 (pinned run-id mismatches -> UNBOUND)

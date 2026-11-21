@@ -1,0 +1,35 @@
+file,reviewed,pack,notes
+02_source/src/benchreceipt/capture.py,yes,01,read in full (609 lines); F-10 explicit_sha gap; P2-06 capture ValueError path
+02_source/src/benchreceipt/git_identity.py,yes,01,read in full (213 lines); pack inline excerpt verified byte-identical to frozen file
+02_source/src/benchreceipt/ci_metadata.py,yes,01,read in full (196 lines); allowlist + event load checked
+02_source/src/benchreceipt/command.py,yes,01,read in full (228 lines); F-09 redaction gaps; P2-17 dead _flag_name
+02_source/src/benchreceipt/canonical.py,yes,01,read in full (50 lines); deterministic; allow_nan=False
+02_source/src/benchreceipt/verify.py,yes,02,read in full (886 lines); F-01 multi-junit; P2-07/08/09/15/18/21
+02_source/src/benchreceipt/matrix.py,yes,02,read in full (101 lines); set logic correct
+02_source/src/benchreceipt/reports/junit.py,yes,02,read in full (199 lines); P2-06 giant int; P2-10 nested suite attrs
+02_source/src/benchreceipt/reports/lcov.py,yes,02,read in full (309 lines); P2-04 verified as documented; P2-06 giant int
+02_source/src/benchreceipt/bundle.py,yes,03,read in full (788 lines); P2-06 manifest int; P2-11/12; P2-03 verified as documented
+02_source/src/benchreceipt/render/html.py,yes,03,read in full (693 lines); all values escaped; no external refs; result-v1 gap honestly labelled
+02_source/src/benchreceipt/cli.py,yes,03,read in full (380 lines); exit codes + top-level guard checked
+02_source/src/benchreceipt/__main__.py,yes,03,read in full (13 lines); dispatches to cli.main
+02_source/src/benchreceipt/__init__.py,yes,03,read in full (10 lines); P2-17 stale NOT_VERIFIED docstring
+02_source/src/benchreceipt/render/__init__.py,yes,03,read in full (5 lines); re-export only
+02_source/src/benchreceipt/reports/__init__.py,yes,03,read in full (10 lines); docstring only
+02_source/src/benchreceipt/schema.py,yes,04,read in full (265 lines); P2-05 $ anchoring; P2-16 const bool
+02_source/src/benchreceipt/policy.py,yes,04,read in full (124 lines); fail-closed; security defaults safe
+02_source/schemas/run.v1.json,yes,04,read in full; patterns anchored in text but see P2-05; after-fields optional
+02_source/schemas/policy.v1.json,yes,04,read in full; schema_version const 1 (see P2-16); reports both required
+02_source/schemas/result.v1.json,yes,04,read in full; maxItems 128 bounds drive P2-07
+02_source/oracle/verify.mjs,yes,05,read in full (702 lines); F-02..F-08 + P2-15 Oracle divergences
+02_source/oracle/verify.test.mjs,yes,05,read in full (111 lines); 8 tests; no production imports
+02_source/oracle/README.md,yes,05,read in full (32 lines); parity claim needs qualification (see findings)
+02_source/pyproject.toml,yes,06,read in full (47 lines); zero runtime deps; console script present
+02_source/examples/github-actions/ci.yml,yes,06,read in full (190 lines); flags match cli.py; PR-head checkout pinned
+02_source/scripts/s0_gate.py,yes,06,read in full (375 lines); P2-14 threshold 8 partly vacuous
+02_source/scripts/repeat_hash.py,yes,06,read in full (64 lines); replays same inputs; correct
+02_source/scripts/validate_workflow_example.py,yes,06,read in full (601 lines); P2-13 remote .whl passes
+02_source/scripts/offline_check.py,yes,06,read in full (240 lines); static AST scan + socket audit; sound
+02_source/scripts/performance_smoke.py,yes,06,read in full (165 lines); P95 nearest-rank correct; network_requests hardcoded 0 (P2-14)
+02_source/scripts/privacy_scan.py,yes,06,read in full (267 lines); P2-19 coverage gaps; key list wider than command.py hints (F-09)
+02_source/scripts/build_fixtures.py,yes,06,read in full (567 lines); Golden NOT generated here (no circularity); P2-20 unguarded rebuild
+02_source/scripts/ui_smoke.py,yes,06,read in full (120 lines); honest NOT_TESTED screenshots; 3 genuine results rendered

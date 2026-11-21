@@ -1,0 +1,15 @@
+=== T014-F1 standalone wheel repro (2026-11-18, clean re-run) ===
+--- 1. wheel already installed --no-index from 05_release/dist.zip into fresh venv: OK ---
+Name: benchreceipt
+Version: 0.1.0
+--- 2. bare benchreceipt --help ---
+usage: benchreceipt [-h] <command> ...
+
+Local-first CI test-evidence binding: capture per-job receipts, verify them
+help-exit=0
+--- 3. capture from the wheel install ---
+benchreceipt capture: error: assembled receipt fails benchreceipt.run/v1 validation: schema validation failed: schema directory not found (looked in ['/home/hatch/workspace/p027-benchreceipt/.tmp/t014-freeze/wheel-repro/venv/lib/python3.12/schemas', '/home/hatch/workspace/p027-benchreceipt/.tmp/t014-freeze/wheel-repro/venv/lib/python3.12/site-packages/benchreceipt/schemas'])
+capture-exit=4
+--- 4. wheel namelist contains no schemas/ ---
+0
+0 matches for 'schemas' in wheel namelist

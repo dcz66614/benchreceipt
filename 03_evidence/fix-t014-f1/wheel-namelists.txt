@@ -1,0 +1,4 @@
+scratch-literal -> ['benchreceipt/schema.py']
+scratch-dotdot -> ['benchreceipt/schema.py']
+scratch-dd -> ['benchreceipt/schema.py']
+scratch-fixed -> ['benchreceipt/schema.py', 'benchreceipt/schemas/policy.v1.json', 'benchreceipt/schemas/result.v1.json', 'benchreceipt/schemas/run.v1.json']

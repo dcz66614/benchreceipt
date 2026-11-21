@@ -1,0 +1,99 @@
+=== SWEEP 1: '02_source/schemas' in tracked files (git grep, excludes .git/.venv/build automatically) ===
+00_control/ADR/ADR-004-fix-capture-junit-lcov-gap.md:21:The frozen schema (`02_source/schemas/run.v1.json`) already allows the
+02_source/pyproject.toml:50:# looks for. A glob pointing at the old 02_source/schemas/ location
+02_source/scripts/verify_review_pack.py:118:    if path.startswith("02_source/schemas/") and path.endswith(".json"):
+02_source/src/benchreceipt/schema.py:68:    Layout 1 (pre-move repo layout): ``02_source/schemas/`` — two
+02_source/tests/packaging/test_wheel_contents.py:15:stanza did nothing while the schemas lived at ``02_source/schemas/``
+03_evidence/fix-t014-f1/SUMMARY.md:22:`02_source/schemas/`, outside the package:
+03_evidence/fix-t014-f1/SUMMARY.md:26:| literal `["schemas/*.json"]`, schemas at `02_source/schemas/` (`wheel-build-literal-stanza.log`) | **none** — setuptools resolves package-data globs relative to the package dir `src/benchreceipt/` and silently drops non-matching globs (no warning) |
+03_evidence/fix-t014-f1/SUMMARY.md:35:1. **`git mv 02_source/schemas/ 02_source/src/benchreceipt/schemas/`**
+03_evidence/fix-t014-f1/SUMMARY.md:47:(`02_source/schemas/`) no longer exists, so `_schemas_dir()` falls
+03_evidence/fix-t014-f1/SUMMARY.md:61:- Stale path references to the old `02_source/schemas/` location
+03_evidence/privacy/SECURITY_FINDINGS.md:100:  `benchreceipt.run/v1` schema (`02_source/schemas/run.v1.json`,
+03_evidence/t014/FINDING-T014-F1.md:35:layouts: Layout 1 (repo/editable install, `02_source/schemas/`) and
+04_review/REVIEW_COVERAGE.csv:20:02_source/schemas/run.v1.json,yes,04,read in full; patterns anchored in text but see P2-05; after-fields optional
+04_review/REVIEW_COVERAGE.csv:21:02_source/schemas/policy.v1.json,yes,04,read in full; schema_version const 1 (see P2-16); reports both required
+04_review/REVIEW_COVERAGE.csv:22:02_source/schemas/result.v1.json,yes,04,read in full; maxItems 128 bounds drive P2-07
+04_review/REVIEW_FINDINGS.md:413:- **Files:** `02_source/schemas/run.v1.json` (`reports[].path`
+04_review/REVIEW_INDEX.md:58:   `git diff cfede2711bc54567b918b1f85654c2dd42c30943 -- 02_source/src 02_source/schemas
+04_review/REVIEW_INDEX.md:105:| `02_source/schemas/run.v1.json` | `a8c95b12cf237680ed8273fe4cab986f81f061e70da7c97fe31ba59360ca1e2a` | 1 | 04 | yes |
+04_review/REVIEW_INDEX.md:106:| `02_source/schemas/policy.v1.json` | `2e555dc3c954b08ac70d2baeb22e449886c88e9ad5dfdc8c7f604daa5312f37a` | 1 | 04 | yes |
+04_review/REVIEW_INDEX.md:107:| `02_source/schemas/result.v1.json` | `2f16a1024bb589063fa89eeac9ae643b5bea52db1bee0dd73bdf1ff61f30aa11` | 1 | 04 | yes |
+04_review/REVIEW_INDEX.md:108:| `02_source/schemas/README.md` | `401edf54f6dc306cbb512b01ec660f5e4fa4a6a9d3bc21aa138f28d4ab97cb0a` | 87 | 04 | no |
+04_review/REVIEW_PACK_04.md:9:| `02_source/schemas/run.v1.json` | `a8c95b12cf237680ed8273fe4cab986f81f061e70da7c97fe31ba59360ca1e2a` | 1 | schema benchreceipt.run/v1 (per-job receipt) |
+04_review/REVIEW_PACK_04.md:10:| `02_source/schemas/policy.v1.json` | `2e555dc3c954b08ac70d2baeb22e449886c88e9ad5dfdc8c7f604daa5312f37a` | 1 | schema benchreceipt.policy/v1 |
+04_review/REVIEW_PACK_04.md:11:| `02_source/schemas/result.v1.json` | `2f16a1024bb589063fa89eeac9ae643b5bea52db1bee0dd73bdf1ff61f30aa11` | 1 | schema benchreceipt.result/v1 |
+04_review/REVIEW_PACK_04.md:12:| `02_source/schemas/README.md` | `401edf54f6dc306cbb512b01ec660f5e4fa4a6a9d3bc21aa138f28d4ab97cb0a` | 87 | schema directory notes (supporting, not a key file) |
+04_review/REVIEW_PACK_04.md:75:8. **Docs cross-check.** `02_source/schemas/README.md` and
+04_review/review_findings.csv:18:P2-11,P2,02_source/schemas/run.v1.json,1,Report path '.' segments: schema allows verify passes bundle rejects,"repro4.py/repro5.py R28/R28b: artifacts/./junit.xml -> verify BOUND_PASS; bundle verify_bundle ok=False REPORT_HASH_MISMATCH",03_evidence/t013-review/repro-part4.log;repro-part5.log
+05_release/FREEZE_REPORT.md:276:  schemas at `02_source/schemas/` (outside the package), the
+05_release/FREEZE_REPORT.md:296:  behaviour): stale references to the old `02_source/schemas/`
+
+=== SWEEP 2: '../schemas/' in tracked files ===
+02_source/pyproject.toml:55:# ["../schemas/*.json"] / ["../../schemas/*.json"] escapes, all
+02_source/tests/packaging/test_wheel_contents.py:16:(outside the package); ``["../schemas/*.json"]`` also matched
+02_source/tests/packaging/test_wheel_contents.py:17:nothing, and ``["../../schemas/*.json"]`` only landed the files in
+03_evidence/fix-t014-f1/SUMMARY.md:27:| `["../schemas/*.json"]` (`wheel-build-dotdot-stanza.log`) | **none** — `..` from the package dir is `src/`, which has no `schemas/` |
+03_evidence/fix-t014-f1/SUMMARY.md:28:| `["../../schemas/*.json"]` (`wheel-build-dotdotdot-stanza.log`) | **none in the wheel** — the files DO enter the sdist (`benchreceipt-0.1.0/schemas/*.json`) and ARE copied by `build_py` to `build/lib/benchreceipt/../../schemas`, i.e. `build/lib/schemas/`, outside any package dir, where `install_lib` never picks them up for the wheel |
+03_evidence/fix-t014-f1/SUMMARY.md:64:  (`../schemas/policy.v1.json` link — now broken),
+03_evidence/fix-t014-f1/wheel-build-dotdotdot-stanza.log:53:copying src/benchreceipt/../../schemas/policy.v1.json -> benchreceipt-0.1.0/src/benchreceipt/../../schemas
+03_evidence/fix-t014-f1/wheel-build-dotdotdot-stanza.log:54:copying src/benchreceipt/../../schemas/result.v1.json -> benchreceipt-0.1.0/src/benchreceipt/../../schemas
+03_evidence/fix-t014-f1/wheel-build-dotdotdot-stanza.log:55:copying src/benchreceipt/../../schemas/run.v1.json -> benchreceipt-0.1.0/src/benchreceipt/../../schemas
+03_evidence/fix-t014-f1/wheel-build-dotdotdot-stanza.log:113:copying src/benchreceipt/../../schemas/policy.v1.json -> build/lib/benchreceipt/../../schemas
+03_evidence/fix-t014-f1/wheel-build-dotdotdot-stanza.log:114:copying src/benchreceipt/../../schemas/result.v1.json -> build/lib/benchreceipt/../../schemas
+03_evidence/fix-t014-f1/wheel-build-dotdotdot-stanza.log:115:copying src/benchreceipt/../../schemas/run.v1.json -> build/lib/benchreceipt/../../schemas
+05_release/FREEZE_REPORT.md:298:  `02_source/docs/USER_GUIDE.md:263` (`../schemas/policy.v1.json`
+
+=== SWEEP 3: bare 'schemas/README.md' not prefixed by src/benchreceipt/ ===
+00_control/ADR/ADR-001-t002-schema-ambiguity.md:66:- **Decision (frozen values, see `schemas/README.md` for the full
+03_evidence/fix-t014-f1/SUMMARY.md:66:  (`schemas/README.md`), and the `schema.py::_schemas_dir()`
+03_evidence/fix-t014-f1/SUMMARY.md:69:  `schemas/README.md` is not in the wheel/sdist. It is
+04_review/REVIEW_INDEX.md:108:| `02_source/schemas/README.md` | `401edf54f6dc306cbb512b01ec660f5e4fa4a6a9d3bc21aa138f28d4ab97cb0a` | 87 | 04 | no |
+04_review/REVIEW_PACK_04.md:12:| `02_source/schemas/README.md` | `401edf54f6dc306cbb512b01ec660f5e4fa4a6a9d3bc21aa138f28d4ab97cb0a` | 87 | schema directory notes (supporting, not a key file) |
+04_review/REVIEW_PACK_04.md:75:8. **Docs cross-check.** `02_source/schemas/README.md` and
+05_release/FREEZE_REPORT.md:302:  wheel ships only `*.json` — `schemas/README.md` stays out of the
+
+=== SWEEP 4: 'schemas/' refs in the 5 edited files ===
+02_source/README.md:187:  src/benchreceipt/schemas/  # benchreceipt.run/v1, result/v1, policy/v1
+02_source/docs/USER_GUIDE.md:263:ignored. See `../src/benchreceipt/schemas/policy.v1.json` and `../examples/benchreceipt.toml`.
+02_source/src/benchreceipt/__init__.py:4:here yet; modules arrive with T002 (src/benchreceipt/schemas/ — canonical schemas) and T003 (capture).
+02_source/src/benchreceipt/reports/junit.py:32:  (``src/benchreceipt/schemas/README.md``: ``reports[].size_bytes`` <= 1 GiB). The size
+02_source/src/benchreceipt/reports/junit.py:53:# Frozen schema limit: reports[].size_bytes <= 1 GiB (src/benchreceipt/schemas/README.md,
+02_source/src/benchreceipt/reports/lcov.py:41:  (``src/benchreceipt/schemas/README.md``: ``reports[].size_bytes`` <= 1 GiB), checked
+02_source/src/benchreceipt/reports/lcov.py:63:# Frozen schema limit: reports[].size_bytes <= 1 GiB (src/benchreceipt/schemas/README.md,
+02_source/src/benchreceipt/schema.py:5:(draft 2020-12) that the frozen ``benchreceipt.*`` schemas use, instead of
+02_source/src/benchreceipt/schema.py:17:Keywords the schemas do not use (``format``, ``allOf``, ``anyOf``,
+02_source/src/benchreceipt/schema.py:65:def _schemas_dir() -> Path:
+02_source/src/benchreceipt/schema.py:68:    Layout 1 (pre-move repo layout): ``02_source/schemas/`` — two
+02_source/src/benchreceipt/schema.py:70:    That directory was removed by FIX-T014-F1 (schemas moved into the
+02_source/src/benchreceipt/schema.py:73:    Layout 2 (packaged): ``schemas/`` shipped as package data next to
+02_source/src/benchreceipt/schema.py:74:    this module (``src/benchreceipt/schemas/``). Since FIX-T014-F1 this
+02_source/src/benchreceipt/schema.py:79:        Path(__file__).resolve().parents[2] / "schemas",
+02_source/src/benchreceipt/schema.py:80:        Path(__file__).resolve().parent / "schemas",
+02_source/src/benchreceipt/schema.py:98:    path = _schemas_dir() / filename
+
+=== SWEEP 5: old-path refs in verify_review_pack.py (DELIBERATELY LEFT — anchored to cfede27) ===
+118:    if path.startswith("02_source/schemas/") and path.endswith(".json"):
+
+=== SWEEP 6: untracked-but-real files outside git (02_source/build excluded; evidence logs excluded) ===
+02_source/src/benchreceipt/schema.py:68:    Layout 1 (pre-move repo layout): ``02_source/schemas/`` — two
+02_source/tests/packaging/test_wheel_contents.py:15:stanza did nothing while the schemas lived at ``02_source/schemas/``
+02_source/pyproject.toml:50:# looks for. A glob pointing at the old 02_source/schemas/ location
+04_review/REVIEW_INDEX.md:58:   `git diff cfede2711bc54567b918b1f85654c2dd42c30943 -- 02_source/src 02_source/schemas
+04_review/REVIEW_INDEX.md:105:| `02_source/schemas/run.v1.json` | `a8c95b12cf237680ed8273fe4cab986f81f061e70da7c97fe31ba59360ca1e2a` | 1 | 04 | yes |
+04_review/REVIEW_INDEX.md:106:| `02_source/schemas/policy.v1.json` | `2e555dc3c954b08ac70d2baeb22e449886c88e9ad5dfdc8c7f604daa5312f37a` | 1 | 04 | yes |
+04_review/REVIEW_INDEX.md:107:| `02_source/schemas/result.v1.json` | `2f16a1024bb589063fa89eeac9ae643b5bea52db1bee0dd73bdf1ff61f30aa11` | 1 | 04 | yes |
+04_review/REVIEW_INDEX.md:108:| `02_source/schemas/README.md` | `401edf54f6dc306cbb512b01ec660f5e4fa4a6a9d3bc21aa138f28d4ab97cb0a` | 87 | 04 | no |
+04_review/REVIEW_PACK_04.md:9:| `02_source/schemas/run.v1.json` | `a8c95b12cf237680ed8273fe4cab986f81f061e70da7c97fe31ba59360ca1e2a` | 1 | schema benchreceipt.run/v1 (per-job receipt) |
+04_review/REVIEW_PACK_04.md:10:| `02_source/schemas/policy.v1.json` | `2e555dc3c954b08ac70d2baeb22e449886c88e9ad5dfdc8c7f604daa5312f37a` | 1 | schema benchreceipt.policy/v1 |
+04_review/REVIEW_PACK_04.md:11:| `02_source/schemas/result.v1.json` | `2f16a1024bb589063fa89eeac9ae643b5bea52db1bee0dd73bdf1ff61f30aa11` | 1 | schema benchreceipt.result/v1 |
+04_review/REVIEW_PACK_04.md:12:| `02_source/schemas/README.md` | `401edf54f6dc306cbb512b01ec660f5e4fa4a6a9d3bc21aa138f28d4ab97cb0a` | 87 | schema directory notes (supporting, not a key file) |
+04_review/REVIEW_PACK_04.md:75:8. **Docs cross-check.** `02_source/schemas/README.md` and
+04_review/REVIEW_COVERAGE.csv:20:02_source/schemas/run.v1.json,yes,04,read in full; patterns anchored in text but see P2-05; after-fields optional
+04_review/REVIEW_COVERAGE.csv:21:02_source/schemas/policy.v1.json,yes,04,read in full; schema_version const 1 (see P2-16); reports both required
+04_review/REVIEW_COVERAGE.csv:22:02_source/schemas/result.v1.json,yes,04,read in full; maxItems 128 bounds drive P2-07
+04_review/REVIEW_FINDINGS.md:413:- **Files:** `02_source/schemas/run.v1.json` (`reports[].path`
+04_review/review_findings.csv:18:P2-11,P2,02_source/schemas/run.v1.json,1,Report path '.' segments: schema allows verify passes bundle rejects,"repro4.py/repro5.py R28/R28b: artifacts/./junit.xml -> verify BOUND_PASS; bundle verify_bundle ok=False REPORT_HASH_MISMATCH",03_evidence/t013-review/repro-part4.log;repro-part5.log
+00_control/ADR/ADR-004-fix-capture-junit-lcov-gap.md:21:The frozen schema (`02_source/schemas/run.v1.json`) already allows the
+05_release/FREEZE_REPORT.md:276:  schemas at `02_source/schemas/` (outside the package), the
+05_release/FREEZE_REPORT.md:296:  behaviour): stale references to the old `02_source/schemas/`

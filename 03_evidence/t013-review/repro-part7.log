@@ -1,0 +1,4 @@
+== P2-O symlinked receipt.json read through by verify ==
+P2-O symlinked receipt.json -> BOUND_PASS []
+== P2-S whitespace --expected-run-id accepted as pin ==
+P2-S expected_run_id=' ' -> UNBOUND ['RUN_ID_MISMATCH'] (accepted as a pin; every job mismatches -> UNBOUND, fail-closed)

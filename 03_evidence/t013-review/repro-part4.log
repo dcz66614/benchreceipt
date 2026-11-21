@@ -1,0 +1,27 @@
+== R4a3 CDATA with '<failure >' (space form) ==
+R4a3-cdata-failure-space: PY BOUND_PASS [] jobs=1 | ORA exit=3 INVALID ['JUNIT_SUMMARY_MISMATCH'] jobs=0
+== R4g self-closing <failure/> counted by PY, missed by Oracle regex ==
+R4g-selfclosing-failure: PY BOUND_FAIL ['EXIT_CODE_MISMATCH', 'JUNIT_FAILED'] jobs=0 | ORA exit=3 INVALID ['EXIT_CODE_MISMATCH', 'JUNIT_FAILED', 'JUNIT_SUMMARY_MISMATCH'] jobs=0
+R4g direct: parse_junit counts failures = 1
+== R6a-redo dup min_tests with single-job policy file ==
+R6a-redo dup min_tests: PY rejects: PolicyInvalid
+R6a-redo dup min_tests: ORA exit=0 BOUND_PASS [] jobs=1
+== R9 giant-int JUnit count attribute ==
+R9 parse_junit huge attr -> ValueError LEAKS (not JUnitError): ValueError Exceeds the limit (4300 digits) for integer string conversion: value has 5000 di
+R9 verify huge attr -> INTERNAL_ERROR ['INTERNAL_ERROR']
+== R10 giant-int manifest size ==
+R10 giant manifest size -> ValueError LEAKS out of verify_bundle: ValueError Exceeds the limit (4300 digits) for integer string conversion: value has 5000 digits; use sys.set_in
+== R21 nested testsuite count attr unchecked (production) ==
+R21 nested suite attrs tests=99/failures=99, 1 testcase -> {'tests': 1, 'failures': 0, 'errors': 0, 'skipped': 0, 'testcase_count': 1, 'suites': 1}
+== R23 P2-03 manifest reorder alone still verifies ==
+R23 reordered manifest alone -> ok=True (P2-03 as documented)
+== R28 report path with '.' segment ==
+R28 schema: path 'artifacts/./junit.xml' ACCEPTED by run.v1 pattern
+R28 verify.py with './' path -> BOUND_PASS []
+Traceback (most recent call last):
+  File "/tmp/t013-repro/repro4.py", line 173, in <module>
+    res = verify_bundle(build_bundle(ev, WORK / "r28-bundle") if False else WORK / "r28-bundle")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hatch/workspace/p027-benchreceipt/02_source/src/benchreceipt/bundle.py", line 617, in verify_bundle
+    raise BundleError(
+benchreceipt.bundle.BundleError: bundle directory is missing or not a directory: /tmp/t013-repro/work4/r28-bundle

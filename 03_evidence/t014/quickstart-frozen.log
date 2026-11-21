@@ -1,0 +1,32 @@
+=== README quickstart from FROZEN source 818c012c (editable install, 2026-11-18) ===
+/home/hatch/workspace/p027-benchreceipt/.tmp/t014-freeze/quickstart-frozen/venv/bin/python: No module named pytest
+benchreceipt capture: error: declared junit report not found after run: /home/hatch/workspace/p027-benchreceipt/.tmp/t014-freeze/quickstart-frozen/quickstart-demo/.benchreceipt/out/junit.xml
+capture-exit=4
+benchreceipt verify: status=INVALID jobs_verified=0 reason_codes=INVALID_RECEIPT out=.benchreceipt/verification.json
+verify-exit=3
+benchreceipt report: status=INVALID html=.benchreceipt/report.html
+report-exit=0
+benchreceipt bundle: built 0 files, 0 bytes, manifest sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855, out=.benchreceipt/bundle
+bundle-exit=0
+benchreceipt bundle: ok: 0 files checked, 0 manifest entries
+bundle-verify-exit=0
+status: INVALID
+=== README quickstart from FROZEN source 818c012c (editable install, retry with pytest installed) ===
+.                                                                        [100%]
+1 passed in 0.01s
+benchreceipt capture: job=demo-linux-py312 exit=0 receipt=.benchreceipt/evidence/demo-linux-py312/receipt.json source_mutated=false
+capture-exit=0
+benchreceipt verify: status=BOUND_PASS jobs_verified=1 reason_codes=- out=.benchreceipt/verification.json
+verify-exit=0
+benchreceipt report: status=BOUND_PASS html=.benchreceipt/report.html
+report-exit=0
+benchreceipt bundle: error: out_dir is not empty, refusing to merge into stale content: .benchreceipt/bundle
+bundle-exit=3
+benchreceipt bundle: ok: 0 files checked, 0 manifest entries
+bundle-verify-exit=0
+status: BOUND_PASS
+=== bundle retry after removing stale empty bundle dir ===
+benchreceipt bundle: built 2 files, 1968 bytes, manifest sha256=a01e13214e88739a4b2facd7e75f0c89649cea071b9e87cfa1386052d9a6de8a, out=.benchreceipt/bundle
+bundle-exit=0
+benchreceipt bundle: ok: 2 files checked, 2 manifest entries
+bundle-verify-exit=0

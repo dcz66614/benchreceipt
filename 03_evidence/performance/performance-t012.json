@@ -1,0 +1,20 @@
+{
+  "hardware": {
+    "cpu_count": 4,
+    "machine": "x86_64",
+    "mem_total_kib": 8124896,
+    "os": "Linux-7.0.0-44-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "source": "00_control/ENVIRONMENT.md (T001: Ubuntu 24.04.5, 4 vCPU, 7.7 GiB RAM, Python 3.12.3, Node v24.22.1)"
+  },
+  "jobs": 100,
+  "limit_seconds": 1.0,
+  "max_seconds": 0.20376803599992854,
+  "mean_seconds": 0.09036561074000929,
+  "network_requests": 0,
+  "p50_seconds": 0.08052140899985716,
+  "p95_seconds": 0.14808261899997888,
+  "reps": 100,
+  "status": "BOUND_PASS",
+  "verdict": "PASS"
+}

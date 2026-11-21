@@ -1,0 +1,109 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0 -- /home/hatch/workspace/p027-benchreceipt/02_source/../.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/hatch/workspace/p027-benchreceipt/02_source
+configfile: pyproject.toml
+collecting ... collected 3 items
+
+tests/packaging/test_wheel_contents.py::test_wheel_contains_every_loaded_schema FAILED [ 33%]
+tests/packaging/test_wheel_contents.py::test_wheel_without_package_data_contains_no_schemas PASSED [ 66%]
+tests/packaging/test_wheel_contents.py::test_schemas_dir_resolves_in_packaged_layout FAILED [100%]
+
+=================================== FAILURES ===================================
+___________________ test_wheel_contains_every_loaded_schema ____________________
+
+built_wheels = {'work': PosixPath('/home/hatch/workspace/p027-benchreceipt/.tmp/pytest-of-root/pytest-103/wheel-contents0'), 'fixed':...pace/p027-benchreceipt/.tmp/pytest-of-root/pytest-103/wheel-contents0/broken-out/benchreceipt-0.1.0-py3-none-any.whl')}
+
+    def test_wheel_contains_every_loaded_schema(built_wheels):
+        """The fixed wheel ships benchreceipt/schemas/*.json, byte-identical."""
+        schema_files = _schema_files()
+        # Cross-check: every file the product loads (SCHEMA_FILES values)
+        # is among the enumerated files — the dir listing cannot go stale.
+        loaded = set(SCHEMA_FILES.values())
+        enumerated = {p.name for p in schema_files}
+        assert loaded <= enumerated, (
+            f"schema.py loads {sorted(loaded - enumerated)} "
+            "not present in src/benchreceipt/schemas/"
+        )
+        members = _wheel_members(built_wheels["fixed"])
+        missing = []
+        for schema_file in schema_files:
+            member = f"benchreceipt/schemas/{schema_file.name}"
+            if member not in members:
+                missing.append(member)
+                continue
+            got = hashlib.sha256(members[member]).hexdigest()
+            want = hashlib.sha256(schema_file.read_bytes()).hexdigest()
+            assert got == want, f"wheel member {member} differs from source ({got} != {want})"
+>       assert not missing, f"fixed wheel is missing packaged schemas: {missing}"
+E       AssertionError: fixed wheel is missing packaged schemas: ['benchreceipt/schemas/policy.v1.json', 'benchreceipt/schemas/result.v1.json', 'benchreceipt/schemas/run.v1.json']
+E       assert not ['benchreceipt/schemas/policy.v1.json', 'benchreceipt/schemas/result.v1.json', 'benchreceipt/schemas/run.v1.json']
+
+tests/packaging/test_wheel_contents.py:230: AssertionError
+_________________ test_schemas_dir_resolves_in_packaged_layout _________________
+
+built_wheels = {'work': PosixPath('/home/hatch/workspace/p027-benchreceipt/.tmp/pytest-of-root/pytest-103/wheel-contents0'), 'fixed':...pace/p027-benchreceipt/.tmp/pytest-of-root/pytest-103/wheel-contents0/broken-out/benchreceipt-0.1.0-py3-none-any.whl')}
+
+    def test_schemas_dir_resolves_in_packaged_layout(built_wheels):
+        """_schemas_dir() finds Layout 2 in a simulated installed wheel.
+    
+        The fixed wheel is unpacked to a directory with no ``schemas/``
+        next to it (so the repo/editable Layout 1 cannot fire), and
+        ``benchreceipt`` is imported from the unpacked wheel in a
+        subprocess whose PYTHONPATH holds only that directory.
+        """
+        work = built_wheels["work"]
+        unpacked = work / "unpacked"
+        with zipfile.ZipFile(built_wheels["fixed"]) as zf:
+            zf.extractall(unpacked)
+        empty_cwd = work / "empty-cwd"
+        empty_cwd.mkdir(exist_ok=True)
+        probe = (
+            "import json, sys\n"
+            "from pathlib import Path\n"
+            "import benchreceipt\n"
+            "from benchreceipt.schema import _schemas_dir, load_schema\n"
+            "unpacked = Path(sys.argv[1])\n"
+            "assert Path(benchreceipt.__file__).is_relative_to(unpacked), "
+            "benchreceipt.__file__\n"
+            "found = _schemas_dir()\n"
+            "assert found == unpacked / 'benchreceipt' / 'schemas', found\n"
+            "for name in ('run', 'policy', 'result'):\n"
+            "    schema = load_schema(name)\n"
+            "    assert schema['$id'].startswith('https://benchreceipt.example/schemas/'), schema\n"
+            "print(json.dumps({'schemas_dir': str(found), 'module': benchreceipt.__file__}))\n"
+        )
+        env = dict(os.environ)
+        env["PYTHONPATH"] = str(unpacked)
+        env.pop("PYTHONHOME", None)
+        proc = subprocess.run(
+            [sys.executable, "-c", probe, str(unpacked)],
+            cwd=empty_cwd,
+            env=env,
+            capture_output=True,
+            text=True,
+            timeout=120,
+        )
+>       assert proc.returncode == 0, (
+            f"packaged-layout probe failed (exit {proc.returncode}):\n"
+            f"--- stdout ---\n{proc.stdout[-2000:]}\n"
+            f"--- stderr ---\n{proc.stderr[-2000:]}"
+        )
+E       AssertionError: packaged-layout probe failed (exit 1):
+E         --- stdout ---
+E         
+E         --- stderr ---
+E         Traceback (most recent call last):
+E           File "<string>", line 7, in <module>
+E           File "/home/hatch/workspace/p027-benchreceipt/.tmp/pytest-of-root/pytest-103/wheel-contents0/unpacked/benchreceipt/schema.py", line 80, in _schemas_dir
+E             raise SchemaValidationError(
+E         benchreceipt.schema.SchemaValidationError: schema validation failed: schema directory not found (looked in ['/home/hatch/workspace/p027-benchreceipt/.tmp/pytest-of-root/pytest-103/wheel-contents0/schemas', '/home/hatch/workspace/p027-benchreceipt/.tmp/pytest-of-root/pytest-103/wheel-contents0/unpacked/benchreceipt/schemas'])
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/home/hatch/workspace/p027-benchreceipt/02_source/../.venv/bin/python', '-c', "import json, sys\nfrom pathlib import Path\nimport benchreceipt\nfrom benchreceipt.schema import _schemas_dir, load_schema\nunpacked = Path(sys.argv[1])\nassert Path(benchreceipt.__file__).is_relative_to(unpacked), benchreceipt.__file__\nfound = _schemas_dir()\nassert found == unpacked / 'benchreceipt' / 'schemas', found\nfor name in ('run', 'policy', 'result'):\n    schema = load_schema(name)\n    assert schema['$id'].startswith('https://benchreceipt.example/schemas/'), schema\nprint(json.dumps({'schemas_dir': str(found), 'module': benchreceipt.__file__}))\n", '/home/hatch/workspace/p027-benchreceipt/.tmp/pytest-of-root/pytest-103/wheel-contents0/unpacked'], returncode=1, stdout='', stderr='Traceback (most recent call last):\n  File "<string>", line 7, in <module>\n  File "/home/hatch/workspace/p027-benchreceipt/.tmp/pytest-of-root/pytest-103/wheel-contents0/unpacked/benchreceipt/schema.py", line 80, in _schemas_dir\n    raise SchemaValidationError(\nbenchreceipt.schema.SchemaValidationError: schema validation failed: schema directory not found (looked in [\'/home/hatch/workspace/p027-benchreceipt/.tmp/pytest-of-root/pytest-103/wheel-contents0/schemas\', \'/home/hatch/workspace/p027-benchreceipt/.tmp/pytest-of-root/pytest-103/wheel-contents0/unpacked/benchreceipt/schemas\'])\n').returncode
+
+tests/packaging/test_wheel_contents.py:294: AssertionError
+=========================== short test summary info ============================
+FAILED tests/packaging/test_wheel_contents.py::test_wheel_contains_every_loaded_schema
+FAILED tests/packaging/test_wheel_contents.py::test_schemas_dir_resolves_in_packaged_layout
+========================= 2 failed, 1 passed in 5.16s ==========================

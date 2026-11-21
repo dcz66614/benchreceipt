@@ -1,0 +1,58 @@
+=== T012 quickstart verification: 2026-11-18T00:38:08Z ===
+--- 1. scratch repo ---
+HEAD=dd262698fc1f13629170cec3e39bdeb0105aa49f
+--- 2. policy (local event_sha, single job) ---
+HEAD after policy commit=b7bb346ab80865657744cf544b587c0f94ee6745
+--- 3. install benchreceipt (editable, from 02_source) ---
+pip install -e 02_source: exit 0
+--- 4. capture ---
+.                                                                        [100%]
+1 passed in 0.01s
+benchreceipt capture: job=demo-linux-py312 exit=0 receipt=.benchreceipt/evidence/demo-linux-py312/receipt.json source_mutated=false
+capture exit: 0
+--- 5. receipt (head) ---
+{
+  "git": {
+    "dirty_after": false,
+    "dirty_before": false,
+    "expected_source_sha": "b7bb346ab80865657744cf544b587c0f94ee6745",
+    "head_sha": "b7bb346ab80865657744cf544b587c0f94ee6745",
+    "head_sha_after": "b7bb346ab80865657744cf544b587c0f94ee6745",
+    "source_mode": "event_sha",
+    "tree_sha": "b7d9a6d0fb0a0f6d6cea801580c3aade93fe0515",
+    "tree_sha_after": "b7d9a6d0fb0a0f6d6cea801580c3aade93fe0515"
+  },
+  "job_id": "demo-linux-py312",
+  "junit": {
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "tests": 1
+  },
+  "schema": "benchreceipt.run/v1"
+}
+--- 6. verify ---
+benchreceipt verify: status=BOUND_PASS jobs_verified=1 reason_codes=- out=.benchreceipt/verification.json
+verify exit: 0
+{
+  "duplicate_jobs": [],
+  "expected_source_mode": "event_sha",
+  "identity_mismatches": [],
+  "jobs_verified": 1,
+  "missing_jobs": [],
+  "reason_codes": [],
+  "report_errors": [],
+  "schema": "benchreceipt.result/v1",
+  "status": "BOUND_PASS",
+  "unexpected_jobs": []
+}
+--- 7. report ---
+benchreceipt report: status=BOUND_PASS html=.benchreceipt/report.html
+report exit: 0
+-rw-rw---- 1 root root 7746 Nov 18 00:38 .benchreceipt/report.html
+--- 8. bundle build + verify ---
+benchreceipt bundle: built 2 files, 1968 bytes, manifest sha256=69a15411fd4501e74cc6915f76f057c96abed5bea2a75cdcf125c238581b63fb, out=.benchreceipt/bundle
+bundle build exit: 0
+benchreceipt bundle: ok: 2 files checked, 2 manifest entries
+bundle verify exit: 0
+=== quickstart verification complete ===

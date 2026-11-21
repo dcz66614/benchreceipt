@@ -1,0 +1,29 @@
+freeze build log (P027-T014)
+commit: 818c012c60b668ecb5d0389015b75c092ea65b4f
+epoch: 1794968710
+source.zip: b77afa5068f489127f4de0a100c2cd0a39c911c2e9389d55ed2e24fbd3274f47
+dist.zip: 4d76e784e4b1a4cfeba3efee3208f76d9bb34ee9a6247111cc186d5bc0fd0f47
+benchreceipt-818c012c60b6.bundle: 236bf12c2c173632ca64f4cfd6837a31c60442fd68b7933c556e609fb1a3df33
+commands:
+  $ git -C /home/hatch/workspace/p027-benchreceipt ls-tree -r --format=%(objectmode) %(objecttype) %(objectname)%x09%(path) 818c012c60b668ecb5d0389015b75c092ea65b4f -- 02_source
+  $ find . -exec touch -h -d @1794968710 {} +
+  $ /home/hatch/workspace/p027-benchreceipt/02_source/../.venv/bin/python -m pip download --no-deps -d /home/hatch/workspace/p027-benchreceipt/.tmp/t014-freeze/run/run1/build-deps setuptools==80.9.0
+  $ /home/hatch/workspace/p027-benchreceipt/02_source/../.venv/bin/python -m pip download --no-deps -d /home/hatch/workspace/p027-benchreceipt/.tmp/t014-freeze/run/run1/build-deps wheel==0.45.1
+  $ /home/hatch/workspace/p027-benchreceipt/02_source/../.venv/bin/python -m pip download --no-deps -d /home/hatch/workspace/p027-benchreceipt/.tmp/t014-freeze/run/run1/build-deps build==1.2.2
+  $ /home/hatch/workspace/p027-benchreceipt/02_source/../.venv/bin/python -m pip download --no-deps -d /home/hatch/workspace/p027-benchreceipt/.tmp/t014-freeze/run/run1/build-deps pyproject_hooks==1.2.0
+  $ /home/hatch/workspace/p027-benchreceipt/02_source/../.venv/bin/python -m pip download --no-deps -d /home/hatch/workspace/p027-benchreceipt/.tmp/t014-freeze/run/run1/build-deps packaging==25.0
+  $ /home/hatch/workspace/p027-benchreceipt/02_source/../.venv/bin/python -m build --no-isolation --outdir /home/hatch/workspace/p027-benchreceipt/.tmp/t014-freeze/run/run1/dist-out .
+  $ git -C /home/hatch/workspace/p027-benchreceipt for-each-ref --format=%(refname) --points-at 818c012c60b668ecb5d0389015b75c092ea65b4f
+  $ git -c pack.threads=1 -C /home/hatch/workspace/p027-benchreceipt bundle create /home/hatch/workspace/p027-benchreceipt/.tmp/t014-freeze/run/run1/out/benchreceipt-818c012c60b6.bundle refs/heads/t014
+  $ git -C /home/hatch/workspace/p027-benchreceipt bundle verify /home/hatch/workspace/p027-benchreceipt/.tmp/t014-freeze/run/run1/out/benchreceipt-818c012c60b6.bundle
+  $ git -C /home/hatch/workspace/p027-benchreceipt ls-tree -r --format=%(objectmode) %(objecttype) %(objectname)%x09%(path) 818c012c60b668ecb5d0389015b75c092ea65b4f -- 02_source
+  $ find . -exec touch -h -d @1794968710 {} +
+  $ /home/hatch/workspace/p027-benchreceipt/02_source/../.venv/bin/python -m pip download --no-deps -d /home/hatch/workspace/p027-benchreceipt/.tmp/t014-freeze/run/run2/build-deps setuptools==80.9.0
+  $ /home/hatch/workspace/p027-benchreceipt/02_source/../.venv/bin/python -m pip download --no-deps -d /home/hatch/workspace/p027-benchreceipt/.tmp/t014-freeze/run/run2/build-deps wheel==0.45.1
+  $ /home/hatch/workspace/p027-benchreceipt/02_source/../.venv/bin/python -m pip download --no-deps -d /home/hatch/workspace/p027-benchreceipt/.tmp/t014-freeze/run/run2/build-deps build==1.2.2
+  $ /home/hatch/workspace/p027-benchreceipt/02_source/../.venv/bin/python -m pip download --no-deps -d /home/hatch/workspace/p027-benchreceipt/.tmp/t014-freeze/run/run2/build-deps pyproject_hooks==1.2.0
+  $ /home/hatch/workspace/p027-benchreceipt/02_source/../.venv/bin/python -m pip download --no-deps -d /home/hatch/workspace/p027-benchreceipt/.tmp/t014-freeze/run/run2/build-deps packaging==25.0
+  $ /home/hatch/workspace/p027-benchreceipt/02_source/../.venv/bin/python -m build --no-isolation --outdir /home/hatch/workspace/p027-benchreceipt/.tmp/t014-freeze/run/run2/dist-out .
+  $ git -C /home/hatch/workspace/p027-benchreceipt for-each-ref --format=%(refname) --points-at 818c012c60b668ecb5d0389015b75c092ea65b4f
+  $ git -c pack.threads=1 -C /home/hatch/workspace/p027-benchreceipt bundle create /home/hatch/workspace/p027-benchreceipt/.tmp/t014-freeze/run/run2/out/benchreceipt-818c012c60b6.bundle refs/heads/t014
+  $ git -C /home/hatch/workspace/p027-benchreceipt bundle verify /home/hatch/workspace/p027-benchreceipt/.tmp/t014-freeze/run/run2/out/benchreceipt-818c012c60b6.bundle

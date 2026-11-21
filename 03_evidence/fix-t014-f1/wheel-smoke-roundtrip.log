@@ -1,0 +1,13 @@
+$ git init -q -b main -> exit 0
+$ git config user.email freeze-check@example.invalid -> exit 0
+$ git config user.name Freeze Check -> exit 0
+$ git add . -> exit 0
+$ git commit -qm demo: one green test -> exit 0
+$ git rev-parse HEAD -> exit 0
+  out: 17eb88db7abec64d68396d595f60229ae41c35b0
+$ /home/hatch/workspace/p027-benchreceipt/.tmp/fix-t014-f1/wheel-smoke-venv/bin/benchreceipt capture --job demo-linux-py312 --matrix os=ubuntu-latest,python=3.12 --junit .benchreceipt/out/junit.xml --source-mode explicit_sha --expected-sha 17eb88db7abec64d68396d595f60229ae41c35b0 -- /home/hatch/workspace/p027-benchreceipt/.tmp/fix-t014-f1/wheel-smoke-venv/bin/python write_junit.py -> exit 0
+  out: benchreceipt capture: job=demo-linux-py312 exit=0 receipt=.benchreceipt/evidence/demo-linux-py312/receipt.json source_mutated=false
+$ /home/hatch/workspace/p027-benchreceipt/.tmp/fix-t014-f1/wheel-smoke-venv/bin/benchreceipt verify --policy .benchreceipt.toml --evidence .benchreceipt/evidence --expected-source-sha 17eb88db7abec64d68396d595f60229ae41c35b0 --out .benchreceipt/verification.json -> exit 0
+  out: benchreceipt verify: status=BOUND_PASS jobs_verified=1 reason_codes=- out=.benchreceipt/verification.json
+VERIFY STATUS: BOUND_PASS
+SMOKE ROUND TRIP: BOUND_PASS

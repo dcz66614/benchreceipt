@@ -1,0 +1,12 @@
+{
+  "distinct_hashes": 1,
+  "fixture": "n02-two-job-pr-head",
+  "hash": "a19054f11949ddd21f922556c07d7d51f0028dde09a18beb9b64e4b2e827d530",
+  "hashes": [
+    "a19054f11949ddd21f922556c07d7d51f0028dde09a18beb9b64e4b2e827d530"
+  ],
+  "runs": 100,
+  "verdict": "PASS"
+}
+repeat_hash: 100 replays of n02-two-job-pr-head: 1 distinct SHA-256 -> PASS
+EXIT=0

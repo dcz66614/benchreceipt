@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+FileNotFoundError: [Errno 2] No such file or directory: '.benchreceipt/out/junit.xml'
+== R13b fallback result itself schema-valid? ==
+R13b status: INVALID unexpected_jobs: 130 missing: [] report_errors: 1
+R13b fallback result: SCHEMA-INVALID: ['$.unexpected_jobs: 130 items, more than maxItems 128']
+R13b CLI verify exit: 4 out file written: False  benchreceipt verify: error: internal error: verification result failed benchreceipt.result/v1 validation
+== R9c capture with giant-int JUnit attr ==
+R9c capture huge-attr junit -> CaptureError declared junit report not found after run: /tmp/t013-repro/t013-r9c-xapu5g44/repo/.benchreceipt/out/junit.xml
+== R1c truncation happens AFTER redaction (no secret tail leak) ==
+R1c display len: 512 contains SECRETVALUE123: False -> "pytest '[REDACTED]' '[REDACTED]' padpadpadpadpadpadpadpadpad"
+== static greps ==
+R29 oracle REASON_STATUS has LCOV_MALFORMED: False | has INTERNAL_ERROR code: False | STATUS_ORDER: ["INVALID", "UNBOUND", "BOUND_FAIL", "BOUND_PASS"]
+R29 oracle mentions lcov parse: False | 'lcov' occurrences: 3
+R30 command SECRET_HINTS: ("token", "password", "secret", "api-key", "apikey", "api_key")
+R30 privacy_scan SECRET_KEY_RE covers passwd/pwd/auth-token/private-key: True
+R31 _flag_name defined, uses: 1 | junit_file_ok uses in verify.py: 2
+R31 __init__ docstring stale: True
+R27 s0_gate invokes offline_check.py: False | performance_smoke network_requests literal: 0
+R29b oracle parseArgs flags: ['--policy', '--expected-source-sha', '--evidence']
+R9c capture huge-attr junit -> ValueError propagates (not CaptureError): ValueError Exceeds the limit (4300 digits) for integer string conversion: value has 5000 digits; use sys.set_in
+R9c CLI capture exit: 4 | stderr: benchreceipt: internal error: ValueError: Exceeds the limit (4300 digits) for integer string conversion: value has 5000 digits; use sys.set_int_max_str_digits() to increase the limit

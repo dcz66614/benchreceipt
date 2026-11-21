@@ -1,0 +1,97 @@
+{
+  "project": "P027 BenchReceipt",
+  "spec_version": "1.2.0",
+  "release_id": "r1",
+  "frozen_commit": "2b1ba19f7f461e2fc9acbf3c7c392d2d21edbd09",
+  "frozen_commit_short": "2b1ba19f7f46",
+  "freeze_date_utc": "2026-11-18T04:37:34Z",
+  "note": "frozen_commit is the commit whose tree was frozen and verified; the release commit that adds 05_release/* sits on top of it. A manifest naming its own commit is uncomputable (hash fixed point); see FREEZE_REPORT.md.",
+  "source_zip": {
+    "file": "source.zip",
+    "bytes": 433074,
+    "sha256": "15d1dd0bcfd217cc060ba1501c9205c9aa2fde9300c5734077867b664cac54af",
+    "source_files": 355,
+    "source_bytes": 1160832
+  },
+  "dist_zip": {
+    "file": "dist.zip",
+    "bytes": 152880,
+    "sha256": "eb73174ab6e51069d2565ebd793d91369b772c33115cf2ba91926bd21b2b48b1"
+  },
+  "bundle": {
+    "file": "benchreceipt-2b1ba19f7f46.bundle",
+    "bytes": 4622659,
+    "sha256": "79faf42ab7b5d9487cea9bdec8b24f69b56c4dc3ef0c74dd9a5b7d016f5474b1"
+  },
+  "sha256sums": {
+    "file": "SHA256SUMS.txt",
+    "bytes": 409,
+    "sha256": "8b132db11cb153a041973862388b607bbc26eaf96e757190230341ee860f9ebc"
+  },
+  "freeze_report": {
+    "file": "FREEZE_REPORT.md",
+    "bytes": 26154,
+    "sha256": "1e92859758351082bb6bf2fe6227e3a27708781cf89036710ec5869300c141ad"
+  },
+  "files": [
+    {
+      "file": ".gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "FREEZE_REPORT.md",
+      "bytes": 26154,
+      "sha256": "1e92859758351082bb6bf2fe6227e3a27708781cf89036710ec5869300c141ad"
+    },
+    {
+      "file": "benchreceipt-2b1ba19f7f46.bundle",
+      "bytes": 4622659,
+      "sha256": "79faf42ab7b5d9487cea9bdec8b24f69b56c4dc3ef0c74dd9a5b7d016f5474b1"
+    },
+    {
+      "file": "dist.zip",
+      "bytes": 152880,
+      "sha256": "eb73174ab6e51069d2565ebd793d91369b772c33115cf2ba91926bd21b2b48b1"
+    },
+    {
+      "file": "source.zip",
+      "bytes": 433074,
+      "sha256": "15d1dd0bcfd217cc060ba1501c9205c9aa2fde9300c5734077867b664cac54af"
+    },
+    {
+      "file": "SHA256SUMS.txt",
+      "bytes": 409,
+      "sha256": "8b132db11cb153a041973862388b607bbc26eaf96e757190230341ee860f9ebc"
+    }
+  ],
+  "gates": {
+    "pytest_passed": 848,
+    "pytest_failed": 0,
+    "oracle_tests_passed": 26,
+    "oracle_tests_total": 26,
+    "s0_verdict": "S0 PASS",
+    "s0_controls": "16/16",
+    "s0_faults": "36/36",
+    "s0_parity": "52/52",
+    "s0_false_pass": 0,
+    "s0_false_block": 0,
+    "s0_repeat_distinct_hashes": 1,
+    "s0_repeat_hash": "a19054f11949ddd21f922556c07d7d51f0028dde09a18beb9b64e4b2e827d530",
+    "s0_golden_sha256": "fb8e70a136aef710fb59d46addda99df71bafb18320afb23d75b61bf21560497",
+    "s0_reason_codes_sha256": "16feb3b809021e410a94c0ccb0a64dfd012cbc8ad72c869c6741747090f4a8e5",
+    "s0_p95_seconds": 0.0924846160000925,
+    "s0_privacy_violations": 0,
+    "s0_offline_network_refs": 0,
+    "s0_generated_at": "2026-11-18T04:33:36.163958Z"
+  },
+  "build": {
+    "python": "3.12.3",
+    "git": "git version 2.43.0",
+    "node": "v24.22.1",
+    "setuptools": "80.9.0",
+    "wheel": "0.45.1",
+    "build": "1.2.2",
+    "packaging": "25.0"
+  }
+}

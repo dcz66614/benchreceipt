@@ -1,0 +1,9 @@
+=== Run 1 (acceptance command, from 02_source) ===
+$ TMPDIR=/home/hatch/workspace/p027-benchreceipt/.tmp ../.venv/bin/python scripts/privacy_scan.py
+privacy_scan: 184 file(s) scanned, 0 finding(s), 0 skipped
+EXIT=0
+
+=== Run 2 (whole work tree, from 02_source) ===
+$ TMPDIR=/home/hatch/workspace/p027-benchreceipt/.tmp ../.venv/bin/python scripts/privacy_scan.py ..
+privacy_scan: 188 file(s) scanned, 0 finding(s), 0 skipped
+EXIT=0

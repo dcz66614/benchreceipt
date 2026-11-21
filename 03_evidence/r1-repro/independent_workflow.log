@@ -1,0 +1,1 @@
+validate_workflow_example: PASS (/mnt/data/p027_r1_audit/zip_checkout/02_source/examples/github-actions/ci.yml; 4 matrix jobs, policy agreement + token-free + local-install checks OK)

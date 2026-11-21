@@ -1,0 +1,178 @@
+* Getting build dependencies for sdist...
+running egg_info
+writing src/benchreceipt.egg-info/PKG-INFO
+writing dependency_links to src/benchreceipt.egg-info/dependency_links.txt
+writing entry points to src/benchreceipt.egg-info/entry_points.txt
+writing requirements to src/benchreceipt.egg-info/requires.txt
+writing top-level names to src/benchreceipt.egg-info/top_level.txt
+reading manifest file 'src/benchreceipt.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'src/benchreceipt.egg-info/SOURCES.txt'
+* Building sdist...
+running sdist
+running egg_info
+writing src/benchreceipt.egg-info/PKG-INFO
+writing dependency_links to src/benchreceipt.egg-info/dependency_links.txt
+writing entry points to src/benchreceipt.egg-info/entry_points.txt
+writing requirements to src/benchreceipt.egg-info/requires.txt
+writing top-level names to src/benchreceipt.egg-info/top_level.txt
+reading manifest file 'src/benchreceipt.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'src/benchreceipt.egg-info/SOURCES.txt'
+running check
+creating benchreceipt-0.1.0
+creating benchreceipt-0.1.0/src/benchreceipt
+creating benchreceipt-0.1.0/src/benchreceipt.egg-info
+creating benchreceipt-0.1.0/src/benchreceipt/render
+creating benchreceipt-0.1.0/src/benchreceipt/reports
+creating benchreceipt-0.1.0/src/benchreceipt/schemas
+creating benchreceipt-0.1.0/tests
+copying files to benchreceipt-0.1.0...
+copying LICENSE -> benchreceipt-0.1.0
+copying README.md -> benchreceipt-0.1.0
+copying pyproject.toml -> benchreceipt-0.1.0
+copying src/benchreceipt/__init__.py -> benchreceipt-0.1.0/src/benchreceipt
+copying src/benchreceipt/__main__.py -> benchreceipt-0.1.0/src/benchreceipt
+copying src/benchreceipt/bundle.py -> benchreceipt-0.1.0/src/benchreceipt
+copying src/benchreceipt/canonical.py -> benchreceipt-0.1.0/src/benchreceipt
+copying src/benchreceipt/capture.py -> benchreceipt-0.1.0/src/benchreceipt
+copying src/benchreceipt/ci_metadata.py -> benchreceipt-0.1.0/src/benchreceipt
+copying src/benchreceipt/cli.py -> benchreceipt-0.1.0/src/benchreceipt
+copying src/benchreceipt/command.py -> benchreceipt-0.1.0/src/benchreceipt
+copying src/benchreceipt/git_identity.py -> benchreceipt-0.1.0/src/benchreceipt
+copying src/benchreceipt/matrix.py -> benchreceipt-0.1.0/src/benchreceipt
+copying src/benchreceipt/policy.py -> benchreceipt-0.1.0/src/benchreceipt
+copying src/benchreceipt/schema.py -> benchreceipt-0.1.0/src/benchreceipt
+copying src/benchreceipt/verify.py -> benchreceipt-0.1.0/src/benchreceipt
+copying src/benchreceipt.egg-info/PKG-INFO -> benchreceipt-0.1.0/src/benchreceipt.egg-info
+copying src/benchreceipt.egg-info/SOURCES.txt -> benchreceipt-0.1.0/src/benchreceipt.egg-info
+copying src/benchreceipt.egg-info/dependency_links.txt -> benchreceipt-0.1.0/src/benchreceipt.egg-info
+copying src/benchreceipt.egg-info/entry_points.txt -> benchreceipt-0.1.0/src/benchreceipt.egg-info
+copying src/benchreceipt.egg-info/requires.txt -> benchreceipt-0.1.0/src/benchreceipt.egg-info
+copying src/benchreceipt.egg-info/top_level.txt -> benchreceipt-0.1.0/src/benchreceipt.egg-info
+copying src/benchreceipt/render/__init__.py -> benchreceipt-0.1.0/src/benchreceipt/render
+copying src/benchreceipt/render/html.py -> benchreceipt-0.1.0/src/benchreceipt/render
+copying src/benchreceipt/reports/__init__.py -> benchreceipt-0.1.0/src/benchreceipt/reports
+copying src/benchreceipt/reports/junit.py -> benchreceipt-0.1.0/src/benchreceipt/reports
+copying src/benchreceipt/reports/lcov.py -> benchreceipt-0.1.0/src/benchreceipt/reports
+copying src/benchreceipt/schemas/policy.v1.json -> benchreceipt-0.1.0/src/benchreceipt/schemas
+copying src/benchreceipt/schemas/result.v1.json -> benchreceipt-0.1.0/src/benchreceipt/schemas
+copying src/benchreceipt/schemas/run.v1.json -> benchreceipt-0.1.0/src/benchreceipt/schemas
+copying tests/test_oracle_parity_r13b.py -> benchreceipt-0.1.0/tests
+copying tests/test_placeholder.py -> benchreceipt-0.1.0/tests
+copying src/benchreceipt.egg-info/SOURCES.txt -> benchreceipt-0.1.0/src/benchreceipt.egg-info
+Writing benchreceipt-0.1.0/setup.cfg
+Creating tar archive
+removing 'benchreceipt-0.1.0' (and everything under it)
+* Building wheel from sdist
+* Getting build dependencies for wheel...
+running egg_info
+writing src/benchreceipt.egg-info/PKG-INFO
+writing dependency_links to src/benchreceipt.egg-info/dependency_links.txt
+writing entry points to src/benchreceipt.egg-info/entry_points.txt
+writing requirements to src/benchreceipt.egg-info/requires.txt
+writing top-level names to src/benchreceipt.egg-info/top_level.txt
+reading manifest file 'src/benchreceipt.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'src/benchreceipt.egg-info/SOURCES.txt'
+* Building wheel...
+running bdist_wheel
+running build
+running build_py
+creating build/lib/benchreceipt
+copying src/benchreceipt/__init__.py -> build/lib/benchreceipt
+copying src/benchreceipt/__main__.py -> build/lib/benchreceipt
+copying src/benchreceipt/bundle.py -> build/lib/benchreceipt
+copying src/benchreceipt/canonical.py -> build/lib/benchreceipt
+copying src/benchreceipt/capture.py -> build/lib/benchreceipt
+copying src/benchreceipt/ci_metadata.py -> build/lib/benchreceipt
+copying src/benchreceipt/cli.py -> build/lib/benchreceipt
+copying src/benchreceipt/command.py -> build/lib/benchreceipt
+copying src/benchreceipt/git_identity.py -> build/lib/benchreceipt
+copying src/benchreceipt/matrix.py -> build/lib/benchreceipt
+copying src/benchreceipt/policy.py -> build/lib/benchreceipt
+copying src/benchreceipt/schema.py -> build/lib/benchreceipt
+copying src/benchreceipt/verify.py -> build/lib/benchreceipt
+creating build/lib/benchreceipt/render
+copying src/benchreceipt/render/__init__.py -> build/lib/benchreceipt/render
+copying src/benchreceipt/render/html.py -> build/lib/benchreceipt/render
+creating build/lib/benchreceipt/reports
+copying src/benchreceipt/reports/__init__.py -> build/lib/benchreceipt/reports
+copying src/benchreceipt/reports/junit.py -> build/lib/benchreceipt/reports
+copying src/benchreceipt/reports/lcov.py -> build/lib/benchreceipt/reports
+running egg_info
+writing src/benchreceipt.egg-info/PKG-INFO
+writing dependency_links to src/benchreceipt.egg-info/dependency_links.txt
+writing entry points to src/benchreceipt.egg-info/entry_points.txt
+writing requirements to src/benchreceipt.egg-info/requires.txt
+writing top-level names to src/benchreceipt.egg-info/top_level.txt
+reading manifest file 'src/benchreceipt.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'src/benchreceipt.egg-info/SOURCES.txt'
+creating build/lib/benchreceipt/schemas
+copying src/benchreceipt/schemas/policy.v1.json -> build/lib/benchreceipt/schemas
+copying src/benchreceipt/schemas/result.v1.json -> build/lib/benchreceipt/schemas
+copying src/benchreceipt/schemas/run.v1.json -> build/lib/benchreceipt/schemas
+installing to build/bdist.linux-x86_64/wheel
+running install
+running install_lib
+creating build/bdist.linux-x86_64/wheel
+creating build/bdist.linux-x86_64/wheel/benchreceipt
+copying build/lib/benchreceipt/__init__.py -> build/bdist.linux-x86_64/wheel/./benchreceipt
+copying build/lib/benchreceipt/__main__.py -> build/bdist.linux-x86_64/wheel/./benchreceipt
+copying build/lib/benchreceipt/bundle.py -> build/bdist.linux-x86_64/wheel/./benchreceipt
+copying build/lib/benchreceipt/canonical.py -> build/bdist.linux-x86_64/wheel/./benchreceipt
+copying build/lib/benchreceipt/capture.py -> build/bdist.linux-x86_64/wheel/./benchreceipt
+copying build/lib/benchreceipt/ci_metadata.py -> build/bdist.linux-x86_64/wheel/./benchreceipt
+copying build/lib/benchreceipt/cli.py -> build/bdist.linux-x86_64/wheel/./benchreceipt
+copying build/lib/benchreceipt/command.py -> build/bdist.linux-x86_64/wheel/./benchreceipt
+copying build/lib/benchreceipt/git_identity.py -> build/bdist.linux-x86_64/wheel/./benchreceipt
+copying build/lib/benchreceipt/matrix.py -> build/bdist.linux-x86_64/wheel/./benchreceipt
+copying build/lib/benchreceipt/policy.py -> build/bdist.linux-x86_64/wheel/./benchreceipt
+copying build/lib/benchreceipt/schema.py -> build/bdist.linux-x86_64/wheel/./benchreceipt
+copying build/lib/benchreceipt/verify.py -> build/bdist.linux-x86_64/wheel/./benchreceipt
+creating build/bdist.linux-x86_64/wheel/benchreceipt/render
+copying build/lib/benchreceipt/render/__init__.py -> build/bdist.linux-x86_64/wheel/./benchreceipt/render
+copying build/lib/benchreceipt/render/html.py -> build/bdist.linux-x86_64/wheel/./benchreceipt/render
+creating build/bdist.linux-x86_64/wheel/benchreceipt/reports
+copying build/lib/benchreceipt/reports/__init__.py -> build/bdist.linux-x86_64/wheel/./benchreceipt/reports
+copying build/lib/benchreceipt/reports/junit.py -> build/bdist.linux-x86_64/wheel/./benchreceipt/reports
+copying build/lib/benchreceipt/reports/lcov.py -> build/bdist.linux-x86_64/wheel/./benchreceipt/reports
+creating build/bdist.linux-x86_64/wheel/benchreceipt/schemas
+copying build/lib/benchreceipt/schemas/policy.v1.json -> build/bdist.linux-x86_64/wheel/./benchreceipt/schemas
+copying build/lib/benchreceipt/schemas/result.v1.json -> build/bdist.linux-x86_64/wheel/./benchreceipt/schemas
+copying build/lib/benchreceipt/schemas/run.v1.json -> build/bdist.linux-x86_64/wheel/./benchreceipt/schemas
+running install_egg_info
+Copying src/benchreceipt.egg-info to build/bdist.linux-x86_64/wheel/./benchreceipt-0.1.0-py3.12.egg-info
+running install_scripts
+creating build/bdist.linux-x86_64/wheel/benchreceipt-0.1.0.dist-info/WHEEL
+creating '/home/hatch/workspace/p027-benchreceipt/.tmp/fix-t014-f1/scratch-fixed/dist-out/.tmp-4tbextkr/benchreceipt-0.1.0-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
+adding 'benchreceipt/__init__.py'
+adding 'benchreceipt/__main__.py'
+adding 'benchreceipt/bundle.py'
+adding 'benchreceipt/canonical.py'
+adding 'benchreceipt/capture.py'
+adding 'benchreceipt/ci_metadata.py'
+adding 'benchreceipt/cli.py'
+adding 'benchreceipt/command.py'
+adding 'benchreceipt/git_identity.py'
+adding 'benchreceipt/matrix.py'
+adding 'benchreceipt/policy.py'
+adding 'benchreceipt/schema.py'
+adding 'benchreceipt/verify.py'
+adding 'benchreceipt/render/__init__.py'
+adding 'benchreceipt/render/html.py'
+adding 'benchreceipt/reports/__init__.py'
+adding 'benchreceipt/reports/junit.py'
+adding 'benchreceipt/reports/lcov.py'
+adding 'benchreceipt/schemas/policy.v1.json'
+adding 'benchreceipt/schemas/result.v1.json'
+adding 'benchreceipt/schemas/run.v1.json'
+adding 'benchreceipt-0.1.0.dist-info/licenses/LICENSE'
+adding 'benchreceipt-0.1.0.dist-info/METADATA'
+adding 'benchreceipt-0.1.0.dist-info/WHEEL'
+adding 'benchreceipt-0.1.0.dist-info/entry_points.txt'
+adding 'benchreceipt-0.1.0.dist-info/top_level.txt'
+adding 'benchreceipt-0.1.0.dist-info/RECORD'
+removing build/bdist.linux-x86_64/wheel
+Successfully built benchreceipt-0.1.0.tar.gz and benchreceipt-0.1.0-py3-none-any.whl

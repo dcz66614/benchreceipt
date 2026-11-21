@@ -1,0 +1,17 @@
+{
+  "dynamic_trace": {
+    "capture_exit": 0,
+    "cli_report_exit": 0,
+    "cli_verify_exit": 0,
+    "socket_events_during_run": 0,
+    "socket_events_total": 0,
+    "verify_status": "BOUND_PASS"
+  },
+  "network_requests": 0,
+  "static_scan": {
+    "findings": [],
+    "root": "/home/hatch/workspace/p027-benchreceipt/02_source/src",
+    "verdict": "CLEAN"
+  },
+  "verdict": "PASS"
+}

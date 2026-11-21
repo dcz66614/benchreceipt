@@ -1,0 +1,22 @@
+== R4a2 CDATA failure, attrs match production counts ==
+R4a2-cdata-failure: PY BOUND_PASS [] jobs=1 | ORA exit=0 BOUND_PASS [] jobs=1
+== R4b2 comment failure, attrs match production counts ==
+R4b2-comment-failure: PY BOUND_PASS [] jobs=1 | ORA exit=0 BOUND_PASS [] jobs=1
+== R24 multi-junit: first report failing, second passing, summary matches second ==
+R24-multi-junit-first-fails: PY INVALID ['EXIT_CODE_MISMATCH', 'JUNIT_FAILED', 'JUNIT_SUMMARY_MISMATCH'] jobs=0 | ORA exit=3 INVALID ['EXIT_CODE_MISMATCH', 'JUNIT_FAILED', 'JUNIT_SUMMARY_MISMATCH'] jobs=0
+R24 note: same input with report order swapped (passing first, failing second):
+R24b-order-swapped: PY INVALID ['EXIT_CODE_MISMATCH', 'JUNIT_FAILED', 'JUNIT_SUMMARY_MISMATCH'] jobs=0 | ORA exit=3 INVALID ['EXIT_CODE_MISMATCH', 'JUNIT_FAILED', 'JUNIT_SUMMARY_MISMATCH'] jobs=0
+== R5 oracle: report-path symlink escape ==
+R5-symlink-escape: PY INVALID ['REPORT_HASH_MISMATCH'] jobs=0 | ORA exit=3 INVALID ['REPORT_HASH_MISMATCH'] jobs=0
+== R6 oracle TOML divergences (raw policy text, oracle CLI only) ==
+R6a dup min_tests: PY rejects: PolicyInvalid
+R6a dup min_tests: ORA exit=3 INVALID ['INVALID_POLICY']
+R6b trailing comment: PY ACCEPTS
+R6b trailing comment: ORA exit=2 UNBOUND ['MATRIX_MISSING_JOB']
+== R7 oracle receipt-validation weakness ==
+R7a-run_attempt-200000+extra-field: PY INVALID ['INVALID_RECEIPT'] jobs=0 | ORA exit=3 INVALID ['INVALID_RECEIPT'] jobs=0
+R7b required_jobs=[123]: PY rejects: PolicyInvalid
+R7b required_jobs=[123]: ORA exit=3 INVALID ['INVALID_POLICY'] missing=[]
+== R16 oracle ignores --expected-run-id pin ==
+R16 oracle --expected-run-id WRONG-RUN: exit=2 UNBOUND ['RUN_ATTEMPT_MISMATCH', 'RUN_ID_MISMATCH']
+R16 python --expected-run-id WRONG-RUN: UNBOUND ['RUN_ATTEMPT_MISMATCH', 'RUN_ID_MISMATCH']

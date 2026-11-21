@@ -1,0 +1,154 @@
+TAP version 13
+# Subtest: TOML parser reads a real fixture policy
+ok 1 - TOML parser reads a real fixture policy
+  ---
+  duration_ms: 5.147891
+  type: 'test'
+  ...
+# Subtest: control fixture verifies BOUND_PASS via evaluate()
+ok 2 - control fixture verifies BOUND_PASS via evaluate()
+  ---
+  duration_ms: 16.023628
+  type: 'test'
+  ...
+# Subtest: CLI contract: control fixture prints result JSON, exit 0
+ok 3 - CLI contract: control fixture prints result JSON, exit 0
+  ---
+  duration_ms: 83.360167
+  type: 'test'
+  ...
+# Subtest: spec §12.3 sample B: mixed attempt -> UNBOUND + RUN_ATTEMPT_MISMATCH, exit 2
+ok 4 - spec §12.3 sample B: mixed attempt -> UNBOUND + RUN_ATTEMPT_MISMATCH, exit 2
+  ---
+  duration_ms: 68.048718
+  type: 'test'
+  ...
+# Subtest: spec §12.3 sample C: wrong source SHA -> UNBOUND + SOURCE_SHA_MISMATCH
+ok 5 - spec §12.3 sample C: wrong source SHA -> UNBOUND + SOURCE_SHA_MISMATCH
+  ---
+  duration_ms: 64.801604
+  type: 'test'
+  ...
+# Subtest: JUnit minimal parser: valid, empty, malformed
+ok 6 - JUnit minimal parser: valid, empty, malformed
+  ---
+  duration_ms: 0.780006
+  type: 'test'
+  ...
+# Subtest: invalid policy -> INVALID result, no crash
+ok 7 - invalid policy -> INVALID result, no crash
+  ---
+  duration_ms: 0.242776
+  type: 'test'
+  ...
+# Subtest: missing evidence directory -> INVALID, not PASS
+ok 8 - missing evidence directory -> INVALID, not PASS
+  ---
+  duration_ms: 0.468767
+  type: 'test'
+  ...
+# Subtest: F-07 TOML: duplicate keys are rejected
+ok 9 - F-07 TOML: duplicate keys are rejected
+  ---
+  duration_ms: 1.007839
+  type: 'test'
+  ...
+# Subtest: F-07 TOML: trailing comments and string escapes match tomllib
+ok 10 - F-07 TOML: trailing comments and string escapes match tomllib
+  ---
+  duration_ms: 0.728027
+  type: 'test'
+  ...
+# Subtest: F-02 LCOV: valid fixture parses; malformed inputs throw
+ok 11 - F-02 LCOV: valid fixture parses; malformed inputs throw
+  ---
+  duration_ms: 1.347382
+  type: 'test'
+  ...
+# Subtest: F-02 evaluate: malformed LCOV is INVALID/LCOV_MALFORMED; valid LCOV passes
+ok 12 - F-02 evaluate: malformed LCOV is INVALID/LCOV_MALFORMED; valid LCOV passes
+  ---
+  duration_ms: 5.842729
+  type: 'test'
+  ...
+# Subtest: F-04 JUnit parser: CDATA/comments/namespaces/self-closing, malformed rejected
+ok 13 - F-04 JUnit parser: CDATA/comments/namespaces/self-closing, malformed rejected
+  ---
+  duration_ms: 1.040158
+  type: 'test'
+  ...
+# Subtest: F-03/F-04 evaluate: attr mismatch malformed; CDATA/comment pass; self-closing failure fails
+ok 14 - F-03/F-04 evaluate: attr mismatch malformed; CDATA/comment pass; self-closing failure fails
+  ---
+  duration_ms: 7.449421
+  type: 'test'
+  ...
+# Subtest: F-05 evaluate: symlinked report escaping the job dir is REPORT_HASH_MISMATCH
+ok 15 - F-05 evaluate: symlinked report escaping the job dir is REPORT_HASH_MISMATCH
+  ---
+  duration_ms: 2.320038
+  type: 'test'
+  ...
+# Subtest: F-05 evaluate: symlink staying inside the job dir still verifies
+ok 16 - F-05 evaluate: symlink staying inside the job dir still verifies
+  ---
+  duration_ms: 2.457766
+  type: 'test'
+  ...
+# Subtest: F-05 resolveRealPath follows symlinks and dangling targets
+ok 17 - F-05 resolveRealPath follows symlinks and dangling targets
+  ---
+  duration_ms: 1.914576
+  type: 'test'
+  ...
+# Subtest: F-06 evaluate: schema-invalid receipts are INVALID_RECEIPT
+ok 18 - F-06 evaluate: schema-invalid receipts are INVALID_RECEIPT
+  ---
+  duration_ms: 25.967361
+  type: 'test'
+  ...
+# Subtest: F-06 evaluate: schema-invalid policies are INVALID_POLICY
+ok 19 - F-06 evaluate: schema-invalid policies are INVALID_POLICY
+  ---
+  duration_ms: 7.177952
+  type: 'test'
+  ...
+# Subtest: F-01 mirror evaluate: multi-JUnit gives the identical triple in both orders
+ok 20 - F-01 mirror evaluate: multi-JUnit gives the identical triple in both orders
+  ---
+  duration_ms: 5.962258
+  type: 'test'
+  ...
+# Subtest: F-08 CLI: pinned wrong run is UNBOUND with both codes; correct pin passes
+ok 21 - F-08 CLI: pinned wrong run is UNBOUND with both codes; correct pin passes
+  ---
+  duration_ms: 260.998379
+  type: 'test'
+  ...
+# Subtest: F-08 CLI: invalid pins and SHAs are usage errors (exit 3, no result JSON)
+ok 22 - F-08 CLI: invalid pins and SHAs are usage errors (exit 3, no result JSON)
+  ---
+  duration_ms: 297.058937
+  type: 'test'
+  ...
+# Subtest: F-08 evaluate: invalid pin values are an INTERNAL_ERROR result, like production
+ok 23 - F-08 evaluate: invalid pin values are an INTERNAL_ERROR result, like production
+  ---
+  duration_ms: 2.690216
+  type: 'test'
+  ...
+# Subtest: F-05 evaluate: symlinked receipt.json escaping the job dir is INVALID_RECEIPT
+ok 24 - F-05 evaluate: symlinked receipt.json escaping the job dir is INVALID_RECEIPT
+  ---
+  duration_ms: 2.010451
+  type: 'test'
+  ...
+1..24
+# tests 24
+# suites 0
+# pass 24
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 973.444034

@@ -1,0 +1,2 @@
+FAIL: verify_release: 1 problem(s)
+  - OFFLINE INSTALL: capture round trip failed (exit 4): benchreceipt capture: error: assembled receipt fails benchreceipt.run/v1 validation: schema validation failed: schema directory not found (looked in ['/home/hatch/workspace/p027-benchreceipt/.tmp/offline-install/venv/lib/python3.12/schemas', '/home/hatch/workspace/p027-benchreceipt/.tmp/offline-install/venv/lib/python3.12/site-packages/benchreceipt/schemas'])

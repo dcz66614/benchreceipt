@@ -1,0 +1,24 @@
+== R1b redaction, neutral values ==
+R1b ['--key', 'hunter2'] -> "pytest '[REDACTED]' '[REDACTED]'"
+R1b ['--auth', 'abc123'] -> "pytest '[REDACTED]' '[REDACTED]'"
+R1b ['--passwd', 'hunter2'] -> "pytest '[REDACTED]' '[REDACTED]'"
+R1b ['--passphrase', 'hunter2'] -> "pytest '[REDACTED]' '[REDACTED]'"
+R1b ['--private-key', 'MIIEvAIBADANBgkqhkiG9w0BAQEFAASC'] -> "pytest '[REDACTED]' '[REDACTED]'"
+R1b ['--credential', 'hunter2'] -> "pytest '[REDACTED]' '[REDACTED]'"
+R1b ['\\\\server\\share\\file.txt'] -> 'pytest file.txt'
+R1b ['file:///home/sam/file.txt'] -> 'pytest file.txt'
+R1b ['/home/sam/file.txt'] -> 'pytest file.txt'
+R1b ['prefix:/home/sam/file.txt'] -> 'pytest prefix:file.txt'
+R1b ['--api-key=hunter2'] -> "pytest '[REDACTED]'"
+R1b ['--token=hunter2'] -> "pytest '[REDACTED]'"
+== R2 oracle: malformed LCOV (policy lcov required) ==
+R2-malformed-lcov: PY INVALID ['LCOV_MALFORMED'] jobs=0 | ORA exit=3 INVALID ['LCOV_MALFORMED'] jobs=0
+== R3 oracle: JUnit count-attr mismatch ==
+R3-attr-mismatch: PY INVALID ['JUNIT_MALFORMED'] jobs=0 | ORA exit=3 INVALID ['JUNIT_MALFORMED'] jobs=0
+== R4 oracle: JUnit regex gaps ==
+R4a-cdata-failure: PY INVALID ['JUNIT_MALFORMED'] jobs=0 | ORA exit=3 INVALID ['JUNIT_MALFORMED'] jobs=0
+R4b-comment-failure: PY BOUND_PASS [] jobs=1 | ORA exit=0 BOUND_PASS [] jobs=1
+R4c-bare-testcase-selfclose: PY BOUND_PASS [] jobs=1 | ORA exit=0 BOUND_PASS [] jobs=1
+R4d-unclosed-testcase: PY INVALID ['JUNIT_MALFORMED'] jobs=0 | ORA exit=3 INVALID ['JUNIT_MALFORMED'] jobs=0
+R4e-doctype: PY INVALID ['JUNIT_MALFORMED'] jobs=0 | ORA exit=3 INVALID ['JUNIT_MALFORMED'] jobs=0
+R4f-namespaced-testcase: PY BOUND_PASS [] jobs=1 | ORA exit=0 BOUND_PASS [] jobs=1

@@ -1,0 +1,63 @@
+........................................................................ [  8%]
+........................................................................ [ 17%]
+........................................................................ [ 26%]
+........................................................................ [ 34%]
+........................................................................ [ 43%]
+.....EEE................................................................ [ 52%]
+........................................................................ [ 60%]
+........................................................................ [ 69%]
+........................................................................ [ 78%]
+........................................................................ [ 86%]
+........................................................................ [ 95%]
+......................................                                   [100%]
+==================================== ERRORS ====================================
+__________ ERROR at setup of test_wheel_contains_every_loaded_schema ___________
+
+tmp_path_factory = TempPathFactory(_given_basetemp=None, _trace=<pluggy._tracing.TagTracerSub object at 0x7fc6c93ec180>, _basetemp=PosixPath('/tmp/pytest-of-root/pytest-7'), _retention_count=3, _retention_policy='all')
+
+>   ???
+
+/mnt/data/p027_r1_audit/src/tests/packaging/test_wheel_contents.py:196: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+dest = PosixPath('/tmp/pytest-of-root/pytest-7/wheel-contents0/buildenv')
+
+>   ???
+E   Failed: offline wheel-build toolchain missing: setuptools, wheel, build, pyproject_hooks, packaging; run `python scripts/freeze_release.py build` once (it downloads + hash-checks the pinned wheels into .tmp/t014-freeze/) and re-run this test
+
+/mnt/data/p027_r1_audit/src/tests/packaging/test_wheel_contents.py:110: Failed
+____ ERROR at setup of test_wheel_without_package_data_contains_no_schemas _____
+
+tmp_path_factory = TempPathFactory(_given_basetemp=None, _trace=<pluggy._tracing.TagTracerSub object at 0x7fc6c93ec180>, _basetemp=PosixPath('/tmp/pytest-of-root/pytest-7'), _retention_count=3, _retention_policy='all')
+
+>   ???
+
+/mnt/data/p027_r1_audit/src/tests/packaging/test_wheel_contents.py:196: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+dest = PosixPath('/tmp/pytest-of-root/pytest-7/wheel-contents0/buildenv')
+
+>   ???
+E   Failed: offline wheel-build toolchain missing: setuptools, wheel, build, pyproject_hooks, packaging; run `python scripts/freeze_release.py build` once (it downloads + hash-checks the pinned wheels into .tmp/t014-freeze/) and re-run this test
+
+/mnt/data/p027_r1_audit/src/tests/packaging/test_wheel_contents.py:110: Failed
+________ ERROR at setup of test_schemas_dir_resolves_in_packaged_layout ________
+
+tmp_path_factory = TempPathFactory(_given_basetemp=None, _trace=<pluggy._tracing.TagTracerSub object at 0x7fc6c93ec180>, _basetemp=PosixPath('/tmp/pytest-of-root/pytest-7'), _retention_count=3, _retention_policy='all')
+
+>   ???
+
+/mnt/data/p027_r1_audit/src/tests/packaging/test_wheel_contents.py:196: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+dest = PosixPath('/tmp/pytest-of-root/pytest-7/wheel-contents0/buildenv')
+
+>   ???
+E   Failed: offline wheel-build toolchain missing: setuptools, wheel, build, pyproject_hooks, packaging; run `python scripts/freeze_release.py build` once (it downloads + hash-checks the pinned wheels into .tmp/t014-freeze/) and re-run this test
+
+/mnt/data/p027_r1_audit/src/tests/packaging/test_wheel_contents.py:110: Failed
+=========================== short test summary info ============================
+ERROR tests/packaging/test_wheel_contents.py::test_wheel_contains_every_loaded_schema - Failed: offline wheel-build toolchain missing: setuptools, wheel, build, pyproject_hooks, packaging; run `python scripts/freeze_release.py build` once (it downloads + hash-checks the pinned wheels into .tmp/t014-freeze/) and re-run this test
+ERROR tests/packaging/test_wheel_contents.py::test_wheel_without_package_data_contains_no_schemas - Failed: offline wheel-build toolchain missing: setuptools, wheel, build, pyproject_hooks, packaging; run `python scripts/freeze_release.py build` once (it downloads + hash-checks the pinned wheels into .tmp/t014-freeze/) and re-run this test
+ERROR tests/packaging/test_wheel_contents.py::test_schemas_dir_resolves_in_packaged_layout - Failed: offline wheel-build toolchain missing: setuptools, wheel, build, pyproject_hooks, packaging; run `python scripts/freeze_release.py build` once (it downloads + hash-checks the pinned wheels into .tmp/t014-freeze/) and re-run this test
+827 passed, 3 errors in 109.97s (0:01:49)

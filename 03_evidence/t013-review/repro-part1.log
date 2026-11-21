@@ -1,0 +1,26 @@
+== R1 redaction / path shortening ==
+R1 ['--key', 'hunter2-secret'] -> "pytest --key '[REDACTED]'"
+R1 ['--auth', 'Bearer-abc123'] -> 'pytest --auth Bearer-abc123'
+R1 ['--passwd', 'hunter2'] -> 'pytest --passwd hunter2'
+R1 ['--passphrase', 'hunter2'] -> 'pytest --passphrase hunter2'
+R1 ['--private-key', '/home/sam/id.pem'] -> 'pytest --private-key id.pem'
+R1 ['https://user:s3cret@example.com/x'] -> 'curl https://user:s3cret@example.com/x'
+R1 ['\\\\server\\share\\secret.txt'] -> "pytest '[REDACTED]'"
+R1 ['file:///home/sam/secret.txt'] -> "pytest '[REDACTED]'"
+R1 ['--config', '/home/sam/.config/x'] -> 'pytest --config x'
+R1 ['--token', 'abc123'] -> "pytest '[REDACTED]' '[REDACTED]'"
+R1 ['--api-key=hunter2'] -> "pytest '[REDACTED]'"
+== R8 schema pattern trailing newline ==
+R8 head_sha 40hex+newline: SCHEMA-ACCEPTS (pattern $ matches before \n)
+R8 report path +newline: SCHEMA-ACCEPTS
+== R19 policy schema_version=true ==
+R19 schema_version=true: ACCEPTED by validate_policy (True==1 const)
+== R25 invalid expected_source_sha label ==
+R25 bad expected sha -> INVALID ['INVALID_POLICY'] [{'code': 'INVALID_POLICY', 'message': 'policy is not valid benchreceipt.policy/v1'}]
+== R15 determine_source_mode ==
+R15 pr, HEAD==head -> ('pr_head', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+R15 pr, HEAD==merge -> ('merge_commit', 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb')
+R15 pr, HEAD==neither -> ('merge_commit', 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb')
+R15 pr, no github_sha -> ('pr_head', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+R15 push + github_sha -> ('event_sha', 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb')
+R15 local -> ('event_sha', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')

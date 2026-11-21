@@ -1,0 +1,6 @@
+$ cd 02_source && TMPDIR=/home/hatch/workspace/p027-benchreceipt/.tmp ../.venv/bin/python -m pytest -q tests/adversarial tests/privacy
+........................................................................ [ 42%]
+........................................................................ [ 85%]
+........................                                                 [100%]
+168 passed in 1.91s
+EXIT=0

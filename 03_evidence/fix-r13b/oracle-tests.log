@@ -1,0 +1,32 @@
+✔ TOML parser reads a real fixture policy (4.268786ms)
+✔ control fixture verifies BOUND_PASS via evaluate() (18.814135ms)
+✔ CLI contract: control fixture prints result JSON, exit 0 (107.969641ms)
+✔ spec §12.3 sample B: mixed attempt -> UNBOUND + RUN_ATTEMPT_MISMATCH, exit 2 (111.899739ms)
+✔ spec §12.3 sample C: wrong source SHA -> UNBOUND + SOURCE_SHA_MISMATCH (94.237563ms)
+✔ JUnit minimal parser: valid, empty, malformed (0.931588ms)
+✔ invalid policy -> INVALID result, no crash (0.355974ms)
+✔ missing evidence directory -> INVALID, not PASS (0.620732ms)
+✔ F-07 TOML: duplicate keys are rejected (1.004317ms)
+✔ F-07 TOML: trailing comments and string escapes match tomllib (0.8396ms)
+✔ F-02 LCOV: valid fixture parses; malformed inputs throw (2.014794ms)
+✔ F-02 evaluate: malformed LCOV is INVALID/LCOV_MALFORMED; valid LCOV passes (6.548778ms)
+✔ F-04 JUnit parser: CDATA/comments/namespaces/self-closing, malformed rejected (4.075076ms)
+✔ F-03/F-04 evaluate: attr mismatch malformed; CDATA/comment pass; self-closing failure fails (9.040797ms)
+✔ F-05 evaluate: symlinked report escaping the job dir is REPORT_HASH_MISMATCH (3.007834ms)
+✔ F-05 evaluate: symlink staying inside the job dir still verifies (2.846241ms)
+✔ F-05 resolveRealPath follows symlinks and dangling targets (1.699791ms)
+✔ F-06 evaluate: schema-invalid receipts are INVALID_RECEIPT (35.320045ms)
+✔ F-06 evaluate: schema-invalid policies are INVALID_POLICY (9.511223ms)
+✔ F-01 mirror evaluate: multi-JUnit gives the identical triple in both orders (9.797112ms)
+✔ F-08 CLI: pinned wrong run is UNBOUND with both codes; correct pin passes (593.770945ms)
+✔ F-08 CLI: invalid pins and SHAs are usage errors (exit 3, no result JSON) (607.238426ms)
+✔ F-08 evaluate: invalid pin values are an INTERNAL_ERROR result, like production (2.54557ms)
+✔ F-05 evaluate: symlinked receipt.json escaping the job dir is INVALID_RECEIPT (3.036177ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1771.568782

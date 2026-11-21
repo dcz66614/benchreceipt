@@ -1,0 +1,32 @@
+✔ TOML parser reads a real fixture policy (3.664098ms)
+✔ control fixture verifies BOUND_PASS via evaluate() (18.467525ms)
+✔ CLI contract: control fixture prints result JSON, exit 0 (103.815627ms)
+✔ spec §12.3 sample B: mixed attempt -> UNBOUND + RUN_ATTEMPT_MISMATCH, exit 2 (106.56296ms)
+✔ spec §12.3 sample C: wrong source SHA -> UNBOUND + SOURCE_SHA_MISMATCH (93.055188ms)
+✔ JUnit minimal parser: valid, empty, malformed (0.94605ms)
+✔ invalid policy -> INVALID result, no crash (0.350335ms)
+✔ missing evidence directory -> INVALID, not PASS (0.62627ms)
+✔ F-07 TOML: duplicate keys are rejected (1.050206ms)
+✔ F-07 TOML: trailing comments and string escapes match tomllib (0.85256ms)
+✔ F-02 LCOV: valid fixture parses; malformed inputs throw (2.080733ms)
+✔ F-02 evaluate: malformed LCOV is INVALID/LCOV_MALFORMED; valid LCOV passes (6.865583ms)
+✔ F-04 JUnit parser: CDATA/comments/namespaces/self-closing, malformed rejected (3.096047ms)
+✔ F-03/F-04 evaluate: attr mismatch malformed; CDATA/comment pass; self-closing failure fails (7.974767ms)
+✔ F-05 evaluate: symlinked report escaping the job dir is REPORT_HASH_MISMATCH (2.687944ms)
+✔ F-05 evaluate: symlink staying inside the job dir still verifies (2.70551ms)
+✔ F-05 resolveRealPath follows symlinks and dangling targets (1.948174ms)
+✔ F-06 evaluate: schema-invalid receipts are INVALID_RECEIPT (35.290431ms)
+✔ F-06 evaluate: schema-invalid policies are INVALID_POLICY (14.007821ms)
+✔ F-01 mirror evaluate: multi-JUnit gives the identical triple in both orders (13.765368ms)
+✔ F-08 CLI: pinned wrong run is UNBOUND with both codes; correct pin passes (491.140517ms)
+✔ F-08 CLI: invalid pins and SHAs are usage errors (exit 3, no result JSON) (624.519469ms)
+✔ F-08 evaluate: invalid pin values are an INTERNAL_ERROR result, like production (3.111609ms)
+✔ F-05 evaluate: symlinked receipt.json escaping the job dir is INVALID_RECEIPT (2.52534ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1692.221636

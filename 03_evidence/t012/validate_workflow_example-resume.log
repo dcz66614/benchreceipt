@@ -1,0 +1,1 @@
+validate_workflow_example: PASS (/home/hatch/workspace/p027-benchreceipt/02_source/examples/github-actions/ci.yml; 4 matrix jobs, policy agreement + token-free + local-install checks OK)
