@@ -119,6 +119,13 @@ synthetic fixtures + delivery integrity ONLY. It does NOT establish:
 
 ## GitHub upload
 
-GitHub upload (private, MIT) — in progress at time of writing; repository
-name `benchreceipt`. URL and head commit to be filled in once the upload
-completes.
+GitHub upload (public, MIT) — COMPLETE 2026-11-25 ~22:50 GMT:
+repository https://github.com/dcz66614/benchreceipt, head commit
+`14a5a1febc8729b5c72945c5bec65c3d2aa2950e` (8 commits). API set COMPLETE
+2026-11-21 ~23:54 GMT: head `28c1e960689a6380d0d8ce9d90d58482db289964`
+(batch 2/2, 214 files; batch 1 `0125a1e42d6a4610e2c7df254f58e683cfbb545c`,
+566 files, 2026-11-21 ~11:07 GMT; 780 API files total, verified from the
+remote 2026-11-22). Web set COMPLETE 2026-11-25 ~22:50 GMT via cloud
+browser (5 files, 5 commits: 2 spec docx `3ea8903a` / `6914a48f`, git bundle
+`a9b11fcd`, source.zip `49bc9bf0`, dist.zip `14a5a1fe`); all 5 remote blobs
+verified byte-identical to local (SHA-256 match). 785 files total on remote.
